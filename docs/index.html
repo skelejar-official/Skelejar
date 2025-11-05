@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,42 +6,36 @@
     <title>Skelejar: Exposing the Single Flaw in Great Villains</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
+    <!-- Inter Font and Custom Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0d1117; /* Dark background */
         }
-        /* Custom colors */
+        /* Custom colors for a sleek, dark UI */
         .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
-        
-        /* Collapse Transition CSS */
-        .collapse-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
+        .btn-flaw {
+            background-color: #21262d; /* Slightly lighter than card */
+            color: #c9d1d9; /* Light gray text */
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
         }
-        .collapse-content.expanded {
-            /* Ensures all article content displays */
-            max-height: 3000px; 
-        }
-        .flaw-toggle:hover svg {
-            transform: rotate(180deg);
-        }
-        .flaw-toggle[aria-expanded="true"] svg {
-            transform: rotate(180deg);
+        .btn-flaw:hover {
+            background-color: #30363d; /* Darker hover */
+            color: #ffffff;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="text-gray-200">
 
-    <!-- HEADER/NAVIGATION -->
+    <!-- HEADER/NAVIGATION - CENTERED -->
     <header class="sticky top-0 z-50 bg-dark-card border-b border-gray-700 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- LOGO AREA - CONFIRMED WORKING URL -->
-            <a href="index.html" class="flex items-center space-x-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col items-center">
+            <!-- LOGO AREA -->
+            <a href="index.html" class="flex items-center space-x-3 mb-4">
                 <img 
                     src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
                     alt="Skelejar Logo" 
@@ -50,7 +44,7 @@
                 />
                 <span class="text-3xl font-extrabold tracking-tight text-white">Skelejar</span>
             </a>
-            <!-- NAVIGATION LINKS -->
+            <!-- NAVIGATION LINKS - Centered below logo -->
             <nav class="space-x-4">
                 <a href="index.html" class="text-accent-red font-semibold hover:text-white transition duration-200">Home</a>
                 <a href="about.html" class="text-gray-400 hover:text-white transition duration-200">About</a>
@@ -58,98 +52,84 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <!-- MAIN CONTENT AREA -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         
-        <h2 class="text-5xl font-extrabold text-white mb-8 text-center">
-            The Cracks in the Armor
-        </h2>
-        <p class="text-xl text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-            Every great villain has a **single, fatal flaw**—that one piece of humanity, pride, or obsession that ensures their downfall. Skelejar exposes it.
+        <!-- INTRO TEXT -->
+        <h1 class="text-6xl font-extrabold text-white mb-4 text-center">
+            The Skelejar Archives
+        </h1>
+        <p class="text-xl text-gray-400 mb-12 text-center max-w-3xl mx-auto">
+            Every great villain has a single, critical flaw that guarantees their failure. We expose the **ego, logical, and personal** mistakes that undermine their otherwise flawless plans.
         </p>
 
-        <!-- VILLAIN CARD GRID -->
-        <div class="space-y-12">
-            
-            <!-- VILLAIN 1: Darth Vader -->
-            <section class="bg-dark-card p-6 sm:p-8 rounded-xl shadow-2xl border border-gray-700 transition duration-300 hover:border-accent-red">
-                <header class="flex justify-between items-center mb-4">
-                    <h3 class="text-4xl font-bold text-white">Darth Vader</h3>
-                    <button 
-                        class="flaw-toggle p-2 rounded-full bg-gray-700 hover:bg-accent-red transition duration-300" 
-                        data-villain-id="vader"
-                        aria-label="Toggle flaw details for Darth Vader"
-                    >
-                        <svg class="w-6 h-6 text-white transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </header>
-                
-                <p class="text-accent-red text-xl font-semibold mb-4">The Flaw: Paternal Love</p>
-                <div id="content-vader" class="collapse-content">
-                    <article class="prose prose-invert max-w-none text-gray-300 pt-4">
-                        <p>
-                            Darth Vader’s entire existence was built upon rejecting his past and embracing the cold, calculated power of the Dark Side. He severed ties with his humanity, his name (Anakin Skywalker), and his emotional attachments—or so he thought. His single, catastrophic flaw was his **paternal love** for Luke Skywalker. This attachment, which he himself claimed to have abandoned, was the one emotion the Emperor could not foresee him acting upon.
-                        </p>
-                        <p>
-                            The Emperor’s plan to replace Vader with Luke was sound, but it failed to account for the primal, overriding instinct of a father protecting his son from mortal harm. When Palpatine began torturing Luke, the part of Anakin that Vader had buried resurfaced. In that moment of pure, selfless protection, Vader sacrificed his own life and allegiance to save his child, fulfilling the prophecy of the Chosen One not by destroying the Sith but by **choosing love over power**.
-                        </p>
-                    </article>
-                </div>
-            </section>
-
-            <!-- VILLAIN 2: Thanos -->
-            <section class="bg-dark-card p-6 sm:p-8 rounded-xl shadow-2xl border border-gray-700 transition duration-300 hover:border-accent-red">
-                <header class="flex justify-between items-center mb-4">
-                    <h3 class="text-4xl font-bold text-white">Thanos</h3>
-                    <button 
-                        class="flaw-toggle p-2 rounded-full bg-gray-700 hover:bg-accent-red transition duration-300" 
-                        data-villain-id="thanos"
-                        aria-label="Toggle flaw details for Thanos"
-                    >
-                        <svg class="w-6 h-6 text-white transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </header>
-                
-                <p class="text-accent-red text-xl font-semibold mb-4">The Flaw: Arrogance of Destiny</p>
-                <div id="content-thanos" class="collapse-content">
-                    <article class="prose prose-invert max-w-none text-gray-300 pt-4">
-                        <p>
-                            Thanos was defined by his unwavering certainty that he was the only one who could save the universe from itself. His plan was mathematically perfect: eliminate half of all life to ensure the survival of the rest. His flaw was his **arrogance of destiny**—his absolute belief that no one could possibly undo his "great work."
-                        </p>
-                        <p>
-                            This arrogance led to two critical mistakes. First, after the Snap, he retired to a secluded farm, believing the fight was over, giving the Avengers time to regroup. Second, and most critically, when he finally confronted Iron Man, he paused for a moment of self-satisfaction before snapping his fingers, declaring, "I am inevitable." This pause allowed Tony Stark the precious seconds he needed to steal the Infinity Stones right from his gauntlet. Thanos’s need for the final, triumphant declaration was his fatal distraction, proving that even destiny is susceptible to pride.
-                        </p>
-                    </article>
-                </div>
-            </section>
-
-            <!-- VILLAIN 3: The Joker -->
-            <section class="bg-dark-card p-6 sm:p-8 rounded-xl shadow-2xl border border-gray-700 transition duration-300 hover:border-accent-red">
-                <header class="flex justify-between items-center mb-4">
-                    <h3 class="text-4xl font-bold text-white">The Joker (Dark Knight)</h3>
-                    <button 
-                        class="flaw-toggle p-2 rounded-full bg-gray-700 hover:bg-accent-red transition duration-300" 
-                        data-villain-id="joker"
-                        aria-label="Toggle flaw details for The Joker"
-                    >
-                        <svg class="w-6 h-6 text-white transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </header>
-                
-                <p class="text-accent-red text-xl font-semibold mb-4">The Flaw: Dependence on Batman</p>
-                <div id="content-joker" class="collapse-content">
-                    <article class="prose prose-invert max-w-none text-gray-300 pt-4">
-                        <p>
-                            The Joker claims to be an agent of pure chaos, seeking to prove that society is only one bad day away from anarchy. However, his true motivation is not destruction, but a symbiotic relationship with Batman. His fatal flaw is his **dependence on Batman** for validation and purpose.
-                        </p>
-                        <p>
-                            In his grand scheme to break Gotham by having two ferries blow each other up, The Joker failed to realize that his chaos experiment depended on the core morality he was trying to disprove. The people chose to be good. Furthermore, his entire existence is meaningless without the "straight man" to react to his performance. He requires Batman to uphold order so he can defy it. By failing to kill Batman, and instead requiring him as a counterpoint to his "chaos," The Joker ensures his own cyclical defeat. He can never win because winning means losing his purpose.
-                        </p>
-                    </article>
-                </div>
-            </section>
-
+        <!-- CATEGORY/FILTER BUTTONS -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
+                Ego Flaw (Speed)
+            </button>
+            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
+                Logical Flaw (Infinity War)
+            </button>
+            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
+                Personal Flaw (Star Wars)
+            </button>
+            <!-- Future: Add more categories here -->
         </div>
+
+        <!-- VILLAIN CARDS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: Howard Payne (Ego Flaw) - Based on SPEED -->
+            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
+                        <span title="Ego Flaw">E</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Howard Payne</h2>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">From: Speed (1994)</p>
+                
+                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: The Need for an Audience (Ego)</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Payne's downfall wasn't due to poor planning or lack of resources, but his inability to execute a successful crime without savoring the power it gave him over his victims and the police. The flaw is his **Ego**: he needed to explain his genius, gloat over his victory, and engage in the games. This need for dialogue and attention gave the heroes the time and opportunity they needed to defeat him. Had he simply detonated the bus or immediately collected the ransom, he might have succeeded.
+                </p>
+            </article>
+
+            <!-- Card 2: Thanos (Logical Flaw) - Based on AVENGERS: INFINITY WAR -->
+            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
+                        <span title="Logical Flaw">L</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Thanos</h2>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">From: Avengers: Infinity War (2018)</p>
+                
+                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: Solving a Population Problem with a Temporary Snap (Logical)</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Thanos's goal—to achieve permanent balance and prevent inevitable collapse—was based on a **Logical Flaw**. The Snap only halved the population, a solution that would be temporary in the face of exponential resource consumption. The critical mistake was believing a one-time kill-off was sufficient, rather than rewriting the laws of the universe (which he could have done with the Gauntlet) to ensure resources perpetually regenerated. His logic was tragically finite.
+                </p>
+            </article>
+
+            <!-- Card 3: Darth Vader (Personal Flaw) - Based on STAR WARS -->
+            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
+                        <span title="Personal Flaw">P</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Darth Vader / Anakin Skywalker</h2>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">From: Star Wars (Original Trilogy)</p>
+                
+                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: Unconditional Attachment to His Children (Personal)</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Darth Vader's dark path began with his inability to let go of **Personal Attachment** (to Padmé). His final downfall was a direct result of the same flaw: he could not stand by and watch his son, Luke, be tortured and killed by the Emperor. His love for his son—the single remnant of his old life—forced him to reject his identity as a Sith Lord, leading to the destruction of the Emperor and himself. His greatest weakness was his family bond.
+                </p>
+            </article>
+            
+        </div>
+
     </main>
 
     <!-- FOOTER -->
@@ -159,36 +139,5 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT: Collapse Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.flaw-toggle');
-
-            buttons.forEach(button => {
-                const contentId = button.getAttribute('data-villain-id');
-                const content = document.getElementById(`content-${contentId}`);
-                
-                // Initialize the ARIA state
-                button.setAttribute('aria-expanded', 'false');
-
-                button.addEventListener('click', () => {
-                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                    
-                    if (isExpanded) {
-                        // Collapse the content
-                        content.classList.remove('expanded');
-                        content.style.maxHeight = '0';
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        // Expand the content
-                        // Note: scrollHeight is used to measure the content height
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.add('expanded');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
