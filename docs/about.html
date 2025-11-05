@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skelejar: Exposing the Single Flaw in Great Villains</title>
+    <title>Skelejar: About the Project</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
@@ -17,14 +17,13 @@
         .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
         
-        /* Collapse Transition CSS */
+        /* Collapse Transition CSS (Included for consistency, though not used here) */
         .collapse-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
         .collapse-content.expanded {
-            /* Ensures all article content displays */
             max-height: 3000px; 
         }
         .flaw-toggle:hover svg {
@@ -35,214 +34,63 @@
         }
     </style>
 </head>
-<body class="text-white">
+<body class="text-gray-200">
 
-    <!-- Header and Navigation -->
-    <header class="bg-gray-900 shadow-lg py-4 border-b border-gray-700 sticky top-0 z-10">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <!-- LOGO: Base64 Image + Text Logo -->
-            <h1 class="text-3xl font-extrabold text-white tracking-tight flex items-center">
-                <!-- Base64 Image Data URI from base64.txt -->
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAIAAADwf7zUAAADMmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczpxPSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1sbnM6SXB0YzR4bXBFeHQ9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBFeHQvMjAwOC0wMi0yOS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNbXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veG1wLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIGV4aWY6Q29sb3JTcGFjZT0iNjU1MzUiIElwdGM0eG1wRXh0OkRpbmlzaElzRGltbWVkPSJGYWxzZSIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNyZ2IgSUVDNjE5NjYtMi4xIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNS0xMS0wMyAyMToyNDo0NSIg eG1wOk1vZGlmeURhdGU9IjIwMjUtMTEtMDMgMjE6MjQ6NDUiIHhtcDpDcmVhdG9yRGF0ZT0iMjAyNS0xMS0wMyAyMToyNDo0NSIgeG1wTU1wOkluc3RhbmNlSUQ9InhtcC5paWQ6NzgyNzkzQkU1RDA1MTFFRUEyMTJGQzE5MTdEM0RGMzkiIHhtcE1N" alt="Skelejar Logo" class="w-10 h-10 mr-2">
-                <span class="text-accent-red text-4xl mr-1">S</span>KELEJAR.
-            </h1>
+    <!-- HEADER/NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-dark-card border-b border-gray-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- LOGO AREA - UPDATED WITH GITHUB RAW URL -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" alt="Skelejar Logo" class="w-8 h-8 rounded-full" />
+                <span class="text-3xl font-extrabold tracking-tight text-white">Skelejar</span>
+            </a>
+            <!-- NAVIGATION LINKS -->
             <nav class="space-x-4">
-                <!-- Current Page Link -->
-                <a href="index.html" class="text-accent-red font-medium text-sm sm:text-base">Villains</a>
-                <!-- Link to the separate About file -->
-                <a href="about.html" class="text-gray-400 hover:text-accent-red transition-colors font-medium text-sm sm:text-base">About the Flaw</a>
+                <a href="index.html" class="text-gray-400 hover:text-white transition duration-200">Home</a>
+                <a href="about.html" class="text-accent-red font-semibold hover:text-white transition duration-200">About</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content Area - HOME PAGE -->
-    <main class="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         
-        <!-- Hero Section -->
-        <section class="text-center mb-12">
-            <h2 class="text-5xl font-extrabold mb-3 leading-tight">Exposing the <span class="text-accent-red">Single Flaw</span></h2>
-            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                Every great cinematic villain has one critical, avoidable misstep that dooms their perfect plan. This is where we break down their structural failure.
+        <h2 class="text-5xl font-extrabold text-white mb-8 text-center">
+            About Skelejar
+        </h2>
+        <p class="text-xl text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+            This project is dedicated to the study of narrative structure, character depth, and the literary concept of the tragic flaw as applied to modern antagonists.
+        </p>
+
+        <div class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700 space-y-6">
+            <h3 class="text-3xl font-bold text-accent-red">The Tragic Flaw</h3>
+            <p class="text-gray-300">
+                In classical literature, a **tragic flaw** (or *hamartia*) is a personality trait—often pride or hubris—that leads to a hero's downfall. Skelejar inverts this concept, applying it to villains. We believe that no antagonist is truly invulnerable; their deepest weakness is often a magnified reflection of their greatest strength or most cherished belief.
             </p>
-        </section>
+            <p class="text-gray-300">
+                A villain's flaw isn't always a moral one, but often an **intellectual blind spot**. For instance, an obsession with order might lead a villain to discount the unpredictability of human emotion (as seen with Thanos), or a need for an audience might prevent a villain from taking the final, necessary step toward true victory (as seen with The Joker).
+            </p>
 
-        <!-- VILLAIN CARD GRID (Responsive 4-Column) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <h3 class="text-3xl font-bold text-accent-red pt-4">How We Analyze</h3>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 pl-4">
+                <li>**Inversion:** We identify the villain's primary goal (e.g., control, chaos, peace) and look for the internal element that contradicts or undermines it.</li>
+                <li>**The Critical Moment:** We pinpoint the exact moment in the narrative where the villain's plan failed, tracing that failure back to a specific choice driven by the flaw.</li>
+                <li>**The Narrative Irony:** We highlight the irony that the villain's own character, rather than the hero's direct action, was the instrument of their defeat.</li>
+            </ul>
 
-            <!-- CARD 1: Thanos (Timing Flaw) -->
-            <article id="timing" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-yellow-500 flex flex-col">
-                <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
-                    <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm font-semibold text-gray-400 mb-1">TIMING FLAW</p>
-                    <h2 class="text-3xl font-bold mb-2 text-white">The Infinity Gauntlet's Fatal <span class="text-yellow-500">Delay</span></h2>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Thanos (Avengers: Infinity War)</p>
-                    <h3 class="text-xl font-semibold text-yellow-500 mt-4 mb-2">The Plan:</h3>
-                    <p class="text-gray-300">Acquire all six Infinity Stones, use the snap to instantly and painlessly eliminate half of all living creatures in the universe, ensuring sustainability.</p>
-                    <h3 class="text-xl font-semibold text-yellow-500 mt-4 mb-2">The Required Perfection:</h3>
-                    <p class="text-gray-300">That the acquisition of the stones be completed **before** the remaining heroes could pool their resources, form a cohesive plan, or establish defensive measures.</p>
-                </div>
-                <button class="flaw-toggle w-full bg-gray-700 hover:bg-yellow-500/80 transition p-4 flex justify-between items-center" data-villain-id="timing" aria-expanded="false">
-                    <span class="text-lg font-semibold text-white">Reveal the Single Flaw</span>
-                    <svg id="icon-timing" class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="content-timing" class="collapse-content bg-gray-800 p-6">
-                    <p class="text-yellow-300 font-semibold mb-2">The Flaw:</p>
-                    <p class="text-gray-200">
-                        Thanos's flaw was not in his power or conviction, but in his **TIMING**. After destroying the Asgardian ship and acquiring the Space Stone, he had two stones and knew the location of the other four (Reality, Power, Time, Soul).
-                        <br><br>Instead of immediately splitting his forces to seize the final four stones, he waited. He sent the Black Order on sequential, easily anticipated missions (to New York for the Time Stone, then Wakanda for the Mind Stone). This delay gave the Avengers, the Guardians, and all available heroes crucial, overlapping time to:
-                        <br>
-                        1. **Rally the team** (bringing together the original Avengers and the Guardians).
-                        2. **Establish a defense** (the battle of Wakanda).
-                        3. **Devise a countermeasure** (Vision's stone destruction).
-                        <br><br>The required perfection was immediate, overwhelming force applied simultaneously to all targets. By waiting for the heroes to come to him in two large battles, Thanos lost the element of surprise and gave the universe's defenders exactly what they needed: **time to react.** If he had executed the final phase 24 hours earlier, the heroes would have been too disorganized to resist.
-                    </p>
-                </div>
-            </article>
-
-            <!-- CARD 2: The Joker (Completeness Flaw) -->
-            <article id="completeness" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-blue-500 flex flex-col">
-                <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
-                    <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H14m-7-14v-4m0 4h14m-7 4v-4m0 4v4m0-4h-2m2 0h2m-2 0a2 2 0 00-2 2v4a2 2 0 002 2m0-8h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4a2 2 0 012-2z"></path></svg>
-                </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm font-semibold text-gray-400 mb-1">COMPLETENESS FLAW</p>
-                    <h2 class="text-3xl font-bold mb-2 text-white">The Joker's Incomplete Masterpiece: Missing the <span class="text-blue-500">Bus</span></h2>
-                    <p class="text-sm font-medium text-gray-400 mb-4">The Joker (The Dark Knight)</p>
-                    <h3 class="text-xl font-semibold text-blue-500 mt-4 mb-2">The Plan:</h3>
-                    <p class="text-gray-300">Rob the bank, escape, and use the ensuing chaos to destabilize Gotham's society and force Batman to break his moral code.</p>
-                    <h3 class="text-xl font-semibold text-blue-500 mt-4 mb-2">The Required Perfection:</h3>
-                    <p class="text-gray-300">That every single piece of the elaborate bank heist—including the getaway—be flawlessly executed and self-contained, leaving no loose ends or witnesses.</p>
-                </div>
-                <button class="flaw-toggle w-full bg-gray-700 hover:bg-blue-500/80 transition p-4 flex justify-between items-center" data-villain-id="completeness" aria-expanded="false">
-                    <span class="text-lg font-semibold text-white">Reveal the Single Flaw</span>
-                    <svg id="icon-completeness" class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="content-completeness" class="collapse-content bg-gray-800 p-6">
-                    <p class="text-yellow-300 font-semibold mb-2">The Flaw:</p>
-                    <p class="text-gray-200">
-                        The Joker is a master of chaos, yet his very first scheme—the pivotal bank robbery—suffers from a crippling flaw of **COMPLETENESS**. His getaway vehicle was not an invisible escape pod or a genius diversion; it was a common school bus.
-                        <br><br>The bus crash **before** the final escape was a moment of pure, unnecessary sloppiness.
-                        <br>
-                        <!-- JOKER BUS SCENE IMAGE -->
-                        <img src="https://placehold.co/600x300/1e293b/94a3b8?text=Placeholder:+School+Bus+After+Bank+Heist" onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/94a3b8?text=Bus+Scene+Image+Unavailable'" alt="Placeholder image of the school bus used for the Joker's bank robbery escape." class="w-full h-auto rounded-lg my-4 shadow-lg border border-gray-600">
-                        <br>
-                        When the bus crashed into the bank, it was merely an obstruction to the police, but it created an **unnecessary link back to the crime**. The police recovered the bus, which was likely traceable, and were able to determine the sequence of events, providing them with their first concrete lead.
-                        <br><br>Later in the film, the Joker successfully executes the hospital bombing, a far more elegant and complete destruction of evidence.
-                        <br>
-                        <!-- JOKER HOSPITAL SCENE IMAGE -->
-                        <img src="https://placehold.co/600x300/4c0519/fda4af?text=Placeholder:+Hospital+Explosion" onerror="this.onerror=null; this.src='https://placehold.co/600x300/4c0519/fda4af?text=Hospital+Scene+Image+Unavailable'" alt="Placeholder image of the hospital explosion scene from The Dark Knight." class="w-full h-auto rounded-lg my-4 shadow-lg border border-gray-600">
-                        <br>
-                        Had the Joker applied the same standard of absolute, traceable-asset-eradicating destruction to his getaway vehicle—perhaps by destroying the bus immediately after exiting—he would have maintained the required level of **COMPLETENESS** and kept the police entirely in the dark, slowing Batman's initial investigation significantly. He solved the problem later, but not in his critical opening move.
-                    </p>
-                </div>
-            </article>
-            
-            <!-- CARD 3: Galactic Empire (Hired Help Flaw) -->
-            <article id="hiredhelp" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-accent-red flex flex-col">
-                <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
-                    <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm4-9c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM8 9a4 4 0 108 0 4 4 0 00-8 0z"/></svg>
-                </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm font-semibold text-gray-400 mb-1">HIRED HELP FLAW</p>
-                    <h2 class="text-3xl font-bold mb-2 text-white">The Empire's Great Mistake: Loyalty Over <span class="text-accent-red">Accuracy</span></h2>
-                    <p class="text-sm font-medium text-gray-400 mb-4">The Stormtrooper Corps (Star Wars Saga)</p>
-                    <h3 class="text-xl font-semibold text-accent-red mt-4 mb-2">The Plan:</h3>
-                    <p class="text-gray-300">Maintain planetary control and suppress all dissent across the galaxy using a mass-produced, universally identifiable, and expendable infantry force (Stormtroopers).</p>
-                    <h3 class="text-xl font-semibold text-accent-red mt-4 mb-2">The Required Perfection:</h3>
-                    <p class="text-gray-300">That sheer overwhelming numbers and the psychological terror of the uniform would compensate for the inevitable lack of individual tactical skill and poor training of the non-clone recruits.</p>
-                </div>
-                <button class="flaw-toggle w-full bg-gray-700 hover:bg-accent-red/80 transition p-4 flex justify-between items-center" data-villain-id="hiredhelp" aria-expanded="false">
-                    <span class="text-lg font-semibold text-white">Reveal the Single Flaw</span>
-                    <svg id="icon-hiredhelp" class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="content-hiredhelp" class="collapse-content bg-gray-800 p-6">
-                    <p class="text-yellow-300 font-semibold mb-2">The Flaw:</p>
-                    <p class="text-gray-200">
-                        The Galactic Empire controls countless star systems, wields planet-destroying technology, and commands a seemingly infinite army. Yet, every viewer knows the embarrassing truth: **Stormtroopers can't hit a target.** This isn't a joke; it is the single, fatal flaw in the Empire's **HIRED HELP** doctrine.
-                        <br><br>The Empire was obsessed with uniformity, obedience, and scale. By replacing the highly competent clone troopers with less reliable, mass-produced recruits, the Empire prioritized **loyalty** to the regime over **military merit**. The Stormtroopers were designed to be disposable shock troops, cheap to deploy and easy to replace, ensuring political stability rather than tactical efficiency.
-                        <br><br>This doctrine created a crippling two-fold failure:
-                        <br><br>1. **The Competence Crisis:** By devaluing individual skill and using Stormtroopers as mere white-armored drones, the Empire failed to invest in the quality of their average soldier. This is why every major encounter—from the garbage compactor on the Death Star to the forests of Endor—sees the heroes succeed, not because they are super-soldiers, but because the Imperial forces are tactically inept and constantly miss.
-                        <br><br>2. **The Command Paralysis:** This failure extended to the leadership. With the entire structure governed by fear of Vader and the Emperor, no one was ever trusted to execute a plan autonomously. Failures like Admiral Ozzel jumping the fleet out of hyperspace too early during the search for the Rebel base were met with immediate, fatal punishment. The Empire’s structure guaranteed that only two people were competent (Vader and Palpatine), and everyone else was too terrified to use their brains, leaving the entire military paralyzed by bureaucracy and incompetence.
-                        <br><br>The Empire was not defeated by a superior army, but by a handful of competent individuals exploiting a massive, systemic failure of management and personnel. Their single flaw wasn't in their engineering, but in their HR.
-                    </p>
-                </div>
-            </article>
-            
-            <!-- CARD 4: Howard Payne (Containment Flaw) -->
-            <article id="containment" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-green-500 flex flex-col">
-                <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
-                    <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm font-semibold text-gray-400 mb-1">CONTAINMENT FLAW</p>
-                    <h2 class="text-3xl font-bold mb-2 text-white">The Bomb's Escape: Failure to <span class="text-green-500">Contain</span> the Bus</h2>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Howard Payne (Speed)</p>
-                    <h3 class="text-xl font-semibold text-green-500 mt-4 mb-2">The Plan:</h3>
-                    <p class="text-gray-300">Extort a massive ransom from the city by strapping a bomb to Bus 2525, which will detonates if the bus drops below 50 mph.</p>
-                    <h3 class="text-xl font-semibold text-green-500 mt-4 mb-2">The Required Perfection:</h3>
-                    <p class="text-gray-300">That the central hostage/payload (the bus) remain completely under the villain's remote control and isolated from any outside intervention.</p>
-                </div>
-                <button class="flaw-toggle w-full bg-gray-700 hover:bg-green-500/80 transition p-4 flex justify-between items-center" data-villain-id="containment" aria-expanded="false">
-                    <span class="text-lg font-semibold text-white">Reveal the Single Flaw</span>
-                    <svg id="icon-containment" class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="content-containment" class="collapse-content bg-gray-800 p-6">
-                    <p class="text-yellow-300 font-semibold mb-2">The Flaw:</p>
-                    <p class="text-gray-200">
-                        Howard Payne is a master bomb-maker, but his entire plan hinges on the single, catastrophic flaw of **CONTAINMENT**. His focus was entirely on the *trigger* (speed) and the *reward* (money), completely neglecting to contain the *target* (the passengers and the bus itself).
-                        <br><br>The required perfection was that the bus must be an inescapable prison. Payne's flaw was allowing Jack Traven, the hero, to gain access to the bus.
-                        <br><br>Once Traven was onboard, Payne's ability to control the situation deteriorated rapidly. Traven was able to:
-                        <br>
-                        1. **Communicate** freely with the outside world, coordinating rescue and tactics.
-                        2. **Exfiltrate** the vulnerable payload (the injured driver and later, all passengers).
-                        3. **Substitute** the human payload with a controllable object (the empty bus looping the video feed) without Payne realizing the deception until it was too late.
-                        <br><br>A flawless plan would have ensured no one could board the bus, or that any boarder would instantly trigger a separate, smaller bomb—a failsafe. By allowing the bus to remain open to outside intervention, he gave the enemy a foothold, ensuring his ultimate **containment failure** and the loss of his leverage.
-                    </p>
-                </div>
-            </article>
-
+            <p class="text-lg font-semibold text-white pt-6">
+                Skelejar: Find the bone, expose the weakness.
+            </p>
         </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6 mt-12 border-t border-gray-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-            &copy; 2024 Skelejar. Exposing the flaws in perfect plans.
+    <!-- FOOTER -->
+    <footer class="bg-dark-card border-t border-gray-700 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            &copy; 2025 Skelejar. Exposing the flaws in perfect plans.
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT: Collapse Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.flaw-toggle');
-
-            buttons.forEach(button => {
-                const contentId = button.getAttribute('data-villain-id');
-                const content = document.getElementById(`content-${contentId}`);
-                
-                // Initialize the ARIA state
-                button.setAttribute('aria-expanded', 'false');
-
-                button.addEventListener('click', () => {
-                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                    
-                    if (isExpanded) {
-                        // Collapse the content
-                        content.classList.remove('expanded');
-                        content.style.maxHeight = '0';
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        // Expand the content
-                        // Note: scrollHeight is used to measure the content height
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.add('expanded');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
