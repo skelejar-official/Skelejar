@@ -24,7 +24,8 @@
             transition: max-height 0.5s ease-in-out;
         }
         .collapse-content.expanded {
-            max-height: 2000px; /* Large enough value to ensure full expansion */
+            /* Ensures all article content displays */
+            max-height: 3000px; 
         }
         .flaw-toggle:hover svg {
             transform: rotate(180deg);
@@ -37,21 +38,24 @@
 <body class="text-white">
 
     <!-- Header and Navigation -->
-    <header class="bg-gray-900 shadow-lg py-4 border-b border-gray-700">
+    <header class="bg-gray-900 shadow-lg py-4 border-b border-gray-700 sticky top-0 z-10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <!-- LOGO: Replaced text with embedded Base64 image -->
-            <img 
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAIAAADwf7zUAAADMmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1sbnM6SXB0YzR4bXBFeHQ9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBFeHQvMjAwOC0wMi0yOS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLy..." 
-                alt="Skelejar Logo" 
-                class="h-10 w-auto"
-            >
-            <nav>
-                <a href="#" class="text-gray-400 hover:text-accent-red transition-colors font-medium text-sm sm:text-base">About the Flaw</a>
+            <!-- LOGO: Base64 Image + Text Logo -->
+            <h1 class="text-3xl font-extrabold text-white tracking-tight flex items-center">
+                <!-- Base64 Image Data URI from base64.txt -->
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAIAAADwf7zUAAADMmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczpxPSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1sbnM6SXB0YzR4bXBFeHQ9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBFeHQvMjAwOC0wMi0yOS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNbXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veG1wLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIGV4aWY6Q29sb3JTcGFjZT0iNjU1MzUiIElwdGM0eG1wRXh0OkRpbmlzaElzRGltbWVkPSJGYWxzZSIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNyZ2IgSUVDNjE5NjYtMi4xIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNS0xMS0wMyAyMToyNDo0NSIg eG1wOk1vZGlmeURhdGU9IjIwMjUtMTEtMDMgMjE6MjQ6NDUiIHhtcDpDcmVhdG9yRGF0ZT0iMjAyNS0xMS0wMyAyMToyNDo0NSIgeG1wTU1wOkluc3RhbmNlSUQ9InhtcC5paWQ6NzgyNzkzQkU1RDA1MTFFRUEyMTJGQzE5MTdEM0RGMzkiIHhtcE1N" alt="Skelejar Logo" class="w-10 h-10 mr-2">
+                <span class="text-accent-red text-4xl mr-1">S</span>KELEJAR.
+            </h1>
+            <nav class="space-x-4">
+                <!-- Current Page Link -->
+                <a href="index.html" class="text-accent-red font-medium text-sm sm:text-base">Villains</a>
+                <!-- Link to the separate About file -->
+                <a href="about.html" class="text-gray-400 hover:text-accent-red transition-colors font-medium text-sm sm:text-base">About the Flaw</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Area - HOME PAGE -->
     <main class="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         
         <!-- Hero Section -->
@@ -62,7 +66,7 @@
             </p>
         </section>
 
-        <!-- VILLAIN CARD GRID (Responsive 3-Column) -->
+        <!-- VILLAIN CARD GRID (Responsive 4-Column) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
             <!-- CARD 1: Thanos (Timing Flaw) -->
@@ -97,7 +101,7 @@
                 </div>
             </article>
 
-            <!-- CARD 2: The Joker (Completeness Flaw) - NOW WITH IMAGES -->
+            <!-- CARD 2: The Joker (Completeness Flaw) -->
             <article id="completeness" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-blue-500 flex flex-col">
                 <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
                     <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H14m-7-14v-4m0 4h14m-7 4v-4m0 4v4m0-4h-2m2 0h2m-2 0a2 2 0 00-2 2v4a2 2 0 002 2m0-8h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4a2 2 0 012-2z"></path></svg>
@@ -166,7 +170,7 @@
                 </div>
             </article>
             
-            <!-- CARD 4: Howard Payne (Containment Flaw) - NEW CARD ADDED -->
+            <!-- CARD 4: Howard Payne (Containment Flaw) -->
             <article id="containment" class="villain-card bg-dark-card rounded-xl shadow-2xl overflow-hidden border-t-4 border-green-500 flex flex-col">
                 <div class="h-40 bg-gray-700 flex items-center justify-center text-4xl text-gray-400 font-bold border-b border-gray-600">
                     <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
@@ -176,7 +180,7 @@
                     <h2 class="text-3xl font-bold mb-2 text-white">The Bomb's Escape: Failure to <span class="text-green-500">Contain</span> the Bus</h2>
                     <p class="text-sm font-medium text-gray-400 mb-4">Howard Payne (Speed)</p>
                     <h3 class="text-xl font-semibold text-green-500 mt-4 mb-2">The Plan:</h3>
-                    <p class="text-gray-300">Extort a massive ransom from the city by strapping a bomb to Bus 2525, which will detonate if the bus drops below 50 mph.</p>
+                    <p class="text-gray-300">Extort a massive ransom from the city by strapping a bomb to Bus 2525, which will detonates if the bus drops below 50 mph.</p>
                     <h3 class="text-xl font-semibold text-green-500 mt-4 mb-2">The Required Perfection:</h3>
                     <p class="text-gray-300">That the central hostage/payload (the bus) remain completely under the villain's remote control and isolated from any outside intervention.</p>
                 </div>
@@ -209,7 +213,7 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT FIX (CRITICAL) -->
+    <!-- INTERACTIVE JAVASCRIPT: Collapse Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('.flaw-toggle');
@@ -231,7 +235,7 @@
                         button.setAttribute('aria-expanded', 'false');
                     } else {
                         // Expand the content
-                        // Temporarily set height to scrollHeight to measure content, then transition
+                        // Note: scrollHeight is used to measure the content height
                         content.style.maxHeight = content.scrollHeight + "px";
                         content.classList.add('expanded');
                         button.setAttribute('aria-expanded', 'true');
