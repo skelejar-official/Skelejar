@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,9 +40,14 @@
     <!-- HEADER/NAVIGATION -->
     <header class="sticky top-0 z-50 bg-dark-card border-b border-gray-700 shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- LOGO AREA - UPDATED WITH GITHUB RAW URL -->
+            <!-- LOGO AREA - CONFIRMED WORKING URL -->
             <a href="index.html" class="flex items-center space-x-3">
-                <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" alt="Skelejar Logo" class="w-8 h-8 rounded-full" />
+                <img 
+                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
+                    alt="Skelejar Logo" 
+                    class="w-8 h-8 rounded-full" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/32x32/FF0000/ffffff?text=X';"
+                />
                 <span class="text-3xl font-extrabold tracking-tight text-white">Skelejar</span>
             </a>
             <!-- NAVIGATION LINKS -->
