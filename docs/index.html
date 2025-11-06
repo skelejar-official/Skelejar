@@ -8,136 +8,171 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font and Custom Styles -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0d1117; /* Dark background */
+            color: #c9d1d9; /* Light text */
+            min-height: 100vh;
         }
-        /* Custom colors for a sleek, dark UI */
         .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
-        .btn-flaw {
-            background-color: #21262d; /* Slightly lighter than card */
-            color: #c9d1d9; /* Light gray text */
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        .flaw-category-btn {
+            transition: background-color 0.2s, transform 0.1s;
         }
-        .btn-flaw:hover {
-            background-color: #30363d; /* Darker hover */
-            color: #ffffff;
+        .flaw-category-btn:hover {
             transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="text-gray-200">
+<body class="flex flex-col">
 
-    <!-- HEADER/NAVIGATION - CENTERED -->
-    <header class="sticky top-0 z-50 bg-dark-card border-b border-gray-700 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col items-center">
-            <!-- LOGO AREA -->
-            <a href="index.html" class="flex items-center space-x-3 mb-4">
-                <img 
-                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
-                    alt="Skelejar Logo" 
-                    class="w-8 h-8 rounded-full" 
-                    onerror="this.onerror=null; this.src='https://placehold.co/32x32/FF0000/ffffff?text=X';"
-                />
-                <span class="text-3xl font-extrabold tracking-tight text-white">Skelejar</span>
+    <!-- Header: Centered Logo and Navigation -->
+    <header class="bg-dark-card shadow-lg p-4 sticky top-0 z-10 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
+            <!-- LOGO WITH SVG ICON -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <!-- Simple "Jar" or "Container" SVG Icon -->
+                <svg class="w-8 h-8 text-accent-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H6.737a2 2 0 01-1.789-2.894l3.5-7A2 2 0 019.236 10H14zM10 20a2 2 0 100-4 2 2 0 000 4zm4 0a2 2 0 100-4 2 2 0 000 4z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10V4m-2 4h4"/>
+                </svg>
+                <h1 class="text-3xl font-extrabold tracking-tight text-white">Skelejar</h1>
             </a>
-            <!-- NAVIGATION LINKS - Centered below logo -->
-            <nav class="space-x-4">
-                <a href="index.html" class="text-accent-red font-semibold hover:text-white transition duration-200">Home</a>
-                <a href="about.html" class="text-gray-400 hover:text-white transition duration-200">About</a>
+            <!-- END LOGO -->
+            <nav class="flex space-x-6 text-lg font-medium">
+                <a href="index.html" class="hover:text-accent-red transition duration-150 border-b-2 border-accent-red">Home</a>
+                <a href="about.html" class="hover:text-accent-red transition duration-150 border-b-2 border-transparent">About</a>
             </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
-    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        
-        <!-- INTRO TEXT -->
-        <h1 class="text-6xl font-extrabold text-white mb-4 text-center">
-            The Skelejar Archives
-        </h1>
-        <p class="text-xl text-gray-400 mb-12 text-center max-w-3xl mx-auto">
-            Every great villain has a single, critical flaw that guarantees their failure. We expose the **ego, logical, and personal** mistakes that undermine their otherwise flawless plans.
-        </p>
+    <main class="flex-grow max-w-7xl mx-auto p-6 w-full">
+        <h2 class="text-4xl font-bold text-center mb-10 text-white">The Single Flaw in Great Villains</h2>
 
-        <!-- CATEGORY/FILTER BUTTONS -->
-        <div class="flex flex-wrap justify-center gap-4 mb-16">
-            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
-                Ego Flaw (Speed)
-            </button>
-            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
-                Logical Flaw (Infinity War)
-            </button>
-            <button class="btn-flaw px-6 py-3 rounded-full text-lg font-semibold border border-gray-600">
-                Personal Flaw (Star Wars)
-            </button>
-            <!-- Future: Add more categories here -->
+        <!-- Search Bar and Filter Buttons (Static Categories) -->
+        <div class="space-y-6 mb-12">
+            <!-- Search Input -->
+            <div class="relative max-w-xl mx-auto">
+                <input type="text" id="search-input" placeholder="Search by name, movie, or flaw category..."
+                       class="w-full p-3 pl-10 rounded-xl bg-[#1e2329] border border-gray-600 text-white focus:ring-accent-red focus:border-accent-red transition duration-150">
+                <!-- Search Icon -->
+                <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+
+            <!-- Static Category Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <button data-filter="all" class="flaw-category-btn px-6 py-2 rounded-full text-sm font-semibold bg-gray-600 hover:bg-gray-500 text-white shadow-md active-filter">All Villains</button>
+                <button data-filter="Ego Flaw" class="flaw-category-btn px-6 py-2 rounded-full text-sm font-semibold bg-[#2a3038] hover:bg-gray-700 text-white shadow-md">Ego Flaw</button>
+                <button data-filter="Logical Flaw" class="flaw-category-btn px-6 py-2 rounded-full text-sm font-semibold bg-[#2a3038] hover:bg-gray-700 text-white shadow-md">Logical Flaw</button>
+                <button data-filter="Personal Flaw" class="flaw-category-btn px-6 py-2 rounded-full text-sm font-semibold bg-[#2a3038] hover:bg-gray-700 text-white shadow-md">Personal Flaw</button>
+            </div>
         </div>
 
-        <!-- VILLAIN CARDS GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Card 1: Howard Payne (Ego Flaw) - Based on SPEED -->
-            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
-                        <span title="Ego Flaw">E</span>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white">Howard Payne</h2>
+        <!-- Villain Article Grid (Horizontal Layout) -->
+        <section id="villain-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: Howard Payne -->
+            <div class="villain-card bg-dark-card rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-red/30 border border-gray-700" data-category="Ego Flaw" data-name="Howard Payne" data-movie="Speed">
+                <img src="https://placehold.co/600x400/161b22/c9d1d9?text=Howard+Payne" alt="Howard Payne from Speed" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-accent-red text-white mb-3">Ego Flaw</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Howard Payne</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Movie: Speed (1994)</p>
+                    <p class="text-gray-300 text-base">The former bomb squad officer driven by revenge and a colossal sense of superiority, which ultimately blinds him to simple solutions.</p>
+                    <!-- Button to link to dedicated page -->
+                    <a href="payne.html" class="mt-5 inline-block w-full text-center bg-accent-red hover:bg-red-500 text-white font-semibold py-2 rounded-lg transition duration-200">See the Flaw →</a>
                 </div>
-                <p class="text-gray-400 text-sm mb-4">From: Speed (1994)</p>
-                
-                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: The Need for an Audience (Ego)</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Payne's downfall wasn't due to poor planning or lack of resources, but his inability to execute a successful crime without savoring the power it gave him over his victims and the police. The flaw is his **Ego**: he needed to explain his genius, gloat over his victory, and engage in the games. This need for dialogue and attention gave the heroes the time and opportunity they needed to defeat him. Had he simply detonated the bus or immediately collected the ransom, he might have succeeded.
-                </p>
-            </article>
+            </div>
 
-            <!-- Card 2: Thanos (Logical Flaw) - Based on AVENGERS: INFINITY WAR -->
-            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-purple-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
-                        <span title="Logical Flaw">L</span>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white">Thanos</h2>
+            <!-- Card 2: Thanos -->
+            <div class="villain-card bg-dark-card rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-red/30 border border-gray-700" data-category="Logical Flaw" data-name="Thanos" data-movie="Avengers: Infinity War">
+                <img src="https://placehold.co/600x400/161b22/c9d1d9?text=Thanos" alt="Thanos from Avengers: Infinity War" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-blue-500 text-white mb-3">Logical Flaw</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Thanos</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Movie: Avengers: Infinity War (2018)</p>
+                    <p class="text-gray-300 text-base">The Titan who believes mass extinction is the only way to save the universe, failing to account for the possibility of creation or alternative solutions.</p>
+                    <!-- Button to link to dedicated page -->
+                    <a href="thanos.html" class="mt-5 inline-block w-full text-center bg-accent-red hover:bg-red-500 text-white font-semibold py-2 rounded-lg transition duration-200">See the Flaw →</a>
                 </div>
-                <p class="text-gray-400 text-sm mb-4">From: Avengers: Infinity War (2018)</p>
-                
-                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: Solving a Population Problem with a Temporary Snap (Logical)</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Thanos's goal—to achieve permanent balance and prevent inevitable collapse—was based on a **Logical Flaw**. The Snap only halved the population, a solution that would be temporary in the face of exponential resource consumption. The critical mistake was believing a one-time kill-off was sufficient, rather than rewriting the laws of the universe (which he could have done with the Gauntlet) to ensure resources perpetually regenerated. His logic was tragically finite.
-                </p>
-            </article>
+            </div>
 
-            <!-- Card 3: Darth Vader (Personal Flaw) - Based on STAR WARS -->
-            <article class="bg-dark-card p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-accent-red transition duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-xl font-bold text-white mr-4">
-                        <span title="Personal Flaw">P</span>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white">Darth Vader / Anakin Skywalker</h2>
+            <!-- Card 3: Darth Vader -->
+            <div class="villain-card bg-dark-card rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-red/30 border border-gray-700" data-category="Personal Flaw" data-name="Darth Vader" data-movie="Star Wars">
+                <img src="https://placehold.co/600x400/161b22/c9d1d9?text=Darth+Vader" alt="Darth Vader from Star Wars" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-purple-500 text-white mb-3">Personal Flaw</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Darth Vader</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Movie: Star Wars Saga</p>
+                    <p class="text-gray-300 text-base">The Sith Lord whose fatal weakness is his inability to truly let go of his past attachments and love, despite embracing the dark side.</p>
+                    <!-- Button to link to dedicated page -->
+                    <a href="vader.html" class="mt-5 inline-block w-full text-center bg-accent-red hover:bg-red-500 text-white font-semibold py-2 rounded-lg transition duration-200">See the Flaw →</a>
                 </div>
-                <p class="text-gray-400 text-sm mb-4">From: Star Wars (Original Trilogy)</p>
-                
-                <h3 class="text-xl font-semibold text-accent-red mb-3">The Flaw: Unconditional Attachment to His Children (Personal)</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Darth Vader's dark path began with his inability to let go of **Personal Attachment** (to Padmé). His final downfall was a direct result of the same flaw: he could not stand by and watch his son, Luke, be tortured and killed by the Emperor. His love for his son—the single remnant of his old life—forced him to reject his identity as a Sith Lord, leading to the destruction of the Emperor and himself. His greatest weakness was his family bond.
-                </p>
-            </article>
-            
-        </div>
+            </div>
 
+        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark-card border-t border-gray-700 mt-12 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            &copy; 2025 Skelejar. Exposing the flaws in perfect plans.
-        </div>
+    <!-- Footer -->
+    <footer class="mt-12 p-6 bg-dark-card border-t border-gray-700 text-center text-gray-500">
+        &copy; 2024 Skelejar. Exposing the flaws in perfect plans.
     </footer>
 
+    <!-- INTERACTIVE JAVASCRIPT: Search and Filter Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const filterButtons = document.querySelectorAll('.flaw-category-btn');
+            const villainCards = document.querySelectorAll('.villain-card');
+
+            // Function to apply current filters and search
+            const applyFilters = () => {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const activeFilter = document.querySelector('.active-filter').getAttribute('data-filter');
+
+                villainCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const name = card.getAttribute('data-name').toLowerCase();
+                    const movie = card.getAttribute('data-movie').toLowerCase();
+
+                    // 1. Check Category Filter
+                    const categoryMatch = (activeFilter === 'all' || category === activeFilter);
+
+                    // 2. Check Search Term
+                    const searchMatch = (name.includes(searchTerm) || movie.includes(searchTerm) || category.toLowerCase().includes(searchTerm));
+
+                    if (categoryMatch && searchMatch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+
+            // Event listener for Search Input
+            searchInput.addEventListener('input', applyFilters);
+
+            // Event listeners for Filter Buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state for buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active-filter', 'bg-gray-600'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-[#2a3038]'));
+                    button.classList.add('active-filter', 'bg-gray-600');
+                    button.classList.remove('bg-[#2a3038]');
+                    
+                    applyFilters();
+                });
+            });
+
+            // Set initial active filter style on load
+            document.querySelector('[data-filter="all"]').classList.add('active-filter', 'bg-gray-600');
+            document.querySelector('[data-filter="all"]').classList.remove('bg-[#2a3038]');
+        });
+    </script>
 </body>
 </html>
