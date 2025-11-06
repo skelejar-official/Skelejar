@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skelejar: About the Project</title>
+    <title>Skelejar: About</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
@@ -18,66 +18,65 @@
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
     </style>
 </head>
-<body class="text-gray-200">
+<body class="min-h-screen flex flex-col">
 
-    <!-- HEADER/NAVIGATION - CENTERED -->
-    <header class="sticky top-0 z-50 bg-dark-card border-b border-gray-700 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col items-center">
-            <!-- LOGO AREA - CONFIRMED WORKING URL -->
-            <a href="index.html" class="flex items-center space-x-3 mb-4">
-                <img 
-                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
-                    alt="Skelejar Logo" 
-                    class="w-8 h-8 rounded-full" 
-                    onerror="this.onerror=null; this.src='https://placehold.co/32x32/FF0000/ffffff?text=X';"
-                />
-                <span class="text-3xl font-extrabold tracking-tight text-white">Skelejar</span>
-            </a>
-            <!-- NAVIGATION LINKS - Centered below logo -->
-            <nav class="space-x-4">
-                <a href="index.html" class="text-gray-400 hover:text-white transition duration-200">Home</a>
-                <a href="about.html" class="text-accent-red font-semibold hover:text-white transition duration-200">About</a>
-            </nav>
+    <!-- Navigation/Header with Centered Title (Simplified for About Page) -->
+    <header class="bg-dark-card shadow-lg sticky top-0 z-10 border-b border-gray-700">
+        <div class="container mx-auto px-4 py-6">
+            
+            <!-- TOP SECTION: Centered Logo and Site Title -->
+            <div class="flex flex-col items-center mb-6">
+                <a href="index 2.html" class="text-3xl font-black text-white flex items-center space-x-3 transition-colors duration-300 hover:text-gray-300">
+                    <!-- LOGO FIXED: Using the uploaded WEBP image file -->
+                    <img src="1000012244.webp" alt="Skelejar Skull Logo" class="w-10 h-10 object-contain">
+                    <span class="text-4xl text-white">Skelejar</span>
+                </a>
+                <!-- Tagline directly below the title -->
+                <h1 class="text-xl font-medium text-gray-400 mt-1">Exposing the Single Flaw in Great Villains</h1>
+            </div>
+
+            <!-- MIDDLE SECTION: Nav Links (Only) -->
+            <div class="flex justify-center pt-1">
+                <nav class="flex justify-center space-x-4">
+                    <a href="index 2.html" class="text-white font-medium hover:text-accent-red">Home</a>
+                    <a href="about.html" class="text-accent-red font-medium hover:underline">About</a>
+                    <a href="#" class="px-3 py-1 bg-accent-red text-white font-semibold rounded-full hover:bg-red-500 transition-colors duration-300 text-sm">Submit Flaw</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        
-        <h2 class="text-5xl font-extrabold text-white mb-8 text-center">
-            About Skelejar
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <h2 class="text-5xl font-extrabold text-white text-center mb-10">
+            About <span class="text-accent-red">Skelejar</span>
         </h2>
-        <p class="text-xl text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-            This project is dedicated to the study of narrative structure, character depth, and the literary concept of the tragic flaw as applied to modern antagonists.
-        </p>
 
-        <div class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700 space-y-6">
-            <h3 class="text-3xl font-bold text-accent-red">The Tragic Flaw</h3>
-            <p class="text-gray-300">
-                In classical literature, a **tragic flaw** (or *hamartia*) is a personality trait—often pride or hubris—that leads to a hero's downfall. Skelejar inverts this concept, applying it to villains. We believe that no antagonist is truly invulnerable; their deepest weakness is often a magnified reflection of their greatest strength or most cherished belief.
-            </p>
-            <p class="text-gray-300">
-                A villain's flaw isn't always a moral one, but often an **intellectual blind spot**. For instance, an obsession with order might lead a villain to discount the unpredictability of human emotion (as seen with Thanos), or a need for an audience might prevent a villain from taking the final, necessary step toward true victory (as seen with The Joker).
-            </p>
+        <div class="max-w-4xl mx-auto space-y-8 text-gray-300 text-lg">
+            
+            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
+                <h3 class="text-3xl font-bold text-accent-red mb-4">Our Mission</h3>
+                <p>Skelejar is dedicated to the study of narrative failure. We believe that truly great villains aren't defeated by overwhelming force or superior planning from the heroes, but by the single, crucial, and often self-inflicted flaw buried deep within their otherwise perfect scheme.</p>
+                <p class="mt-4">We catalog these 'skelejar' flaws—the weak point, the emotional blind spot, the theatrical flourish—that ultimately lead to the downfall of characters like Emperor Palpatine and Thanos. It's an exploration of fictional psychology and the inevitable consequences of hubris.</p>
+            </section>
 
-            <h3 class="text-3xl font-bold text-accent-red pt-4">How We Analyze</h3>
-            <ul class="list-disc list-inside text-gray-300 space-y-2 pl-4">
-                <li>**Inversion:** We identify the villain's primary goal (e.g., control, chaos, peace) and look for the internal element that contradicts or undermines it.</li>
-                <li>**The Critical Moment:** We pinpoint the exact moment in the narrative where the villain's plan failed, tracing that failure back to a specific choice driven by the flaw.</li>
-                <li>**The Narrative Irony:** We highlight the irony that the villain's own character, rather than the hero's direct action, was the instrument of their defeat.</li>
-            </ul>
+            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
+                <h3 class="text-3xl font-bold text-accent-red mb-4">The Methodology</h3>
+                <p>Each flaw analyzed on Skelejar is distilled to a single, easily digestible concept. Our team scrutinizes the source material to isolate the point of failure that, had it been avoided, would have allowed the villain's plan to succeed. This isn't about rewriting the plot; it's about identifying the one, necessary bone of contention that the hero always exploits.</p>
+            </section>
+            
+            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
+                <h3 class="text-3xl font-bold text-accent-red mb-4">Contribute</h3>
+                <p>Think a villain's true weakness has been overlooked? We rely on community input to keep our database sharp. Use the "Submit Flaw" button to send us your analysis. We're looking for compelling arguments that identify the one fatal flaw, not just general poor choices.</p>
+            </section>
 
-            <p class="text-lg font-semibold text-white pt-6">
-                Skelejar: Find the bone, expose the weakness.
-            </p>
         </div>
-
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark-card border-t border-gray-700 mt-12 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            &copy; 2025 Skelejar. Exposing the flaws in perfect plans.
+    <!-- Footer -->
+    <footer class="bg-dark-card mt-12 py-6 border-t border-gray-700">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            &copy; 2024 Skelejar. Exposing the flaws in perfect plans.
         </div>
     </footer>
 
