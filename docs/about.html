@@ -6,78 +6,118 @@
     <title>Skelejar: About</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome v6 for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3HzqW3l/p1nSSQzWbB4kH6C1/A6U3J4sE2e3uH4M4t6XzU5wA0E7dF0Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Inter Font -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            /* DEEP DARK BACKGROUND */
-            background-color: #0d1117; 
+            background-color: #0d1117; /* Dark background */
         }
         /* Custom colors */
-        .text-accent-red { color: #f87171; } 
+        .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
+        
+        /* Collapse Transition CSS (Included for consistency) */
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .collapse-content.expanded {
+            max-height: 3000px; 
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen text-gray-100 antialiased">
 
-    <!-- Navigation/Header Block (Now relative for absolute positioning of the nav links) -->
-    <header class="bg-dark-card shadow-lg sticky top-0 z-10 border-b border-gray-700 relative">
-        <div class="container mx-auto px-4 pt-16 pb-6 flex flex-col items-center">
-            
-            <!-- ABSOLUTELY POSITIONED NAV LINKS (Top Right Corner) -->
-            <div class="absolute top-4 right-4 md:right-10 z-30">
-                <nav class="flex space-x-6">
-                    <a href="index 2.html" class="text-white font-semibold hover:text-accent-red transition duration-200">Home</a>
-                    <a href="about.html" class="text-accent-red font-semibold hover:underline border-b-2 border-accent-red pb-1 transition duration-200">About</a>
-                    <a href="#" class="px-3 py-1 bg-accent-red text-white font-semibold rounded-full hover:bg-red-500 transition-colors duration-300 text-sm">Submit Flaw</a>
-                </nav>
+    <!-- Header & Navigation: Now includes SVG Logo -->
+    <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight flex items-center">
+                <!-- SVG Icon (Logo) -->
+                <svg class="w-6 h-6 mr-2 text-accent-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 2a2 2 0 00-2 2v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-2V4a2 2 0 00-2-2h-4zM12 6v14m0-14a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+                <a href="index 2.html" class="text-gray-50 hover:text-accent-red transition-colors">Skelejar</a>
             </div>
             
-            <!-- Centered Logo and Site Title (Pushed down by pt-16) -->
-            <div class="flex flex-col items-center mb-6">
-                <a href="index 2.html" class="text-3xl font-black text-white flex items-center space-x-3 transition-colors duration-300 hover:text-gray-300">
-                    <!-- LOGO IMAGE (UPDATED URL) -->
-                    <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" alt="Skelejar Skull Logo" class="w-10 h-10 object-contain">
-                    <span class="text-4xl text-accent-red">Skelejar</span>
-                </a>
-                <!-- Tagline directly below the title -->
-                <h1 class="text-xl font-medium text-gray-400 mt-1">Exposing the Single Flaw in Great Villains</h1>
+            <div class="flex items-center space-x-6">
+                <!-- Nav Links -->
+                <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
+                <a href="about.html" class="text-accent-red transition-colors font-medium">About</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto px-4 py-12">
-        <h2 class="text-5xl font-extrabold text-white text-center mb-10">
-            About <span class="text-accent-red">Skelejar</span>
-        </h2>
-
-        <div class="max-w-4xl mx-auto space-y-8 text-gray-300 text-lg">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <section class="mb-12">
+            <h1 class="text-5xl font-black mb-6 text-gray-50 border-b pb-4 border-gray-700">
+                About Skelejar: The Art of the Flaw
+            </h1>
             
-            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
-                <h3 class="text-3xl font-bold text-accent-red mb-4">Our Mission</h3>
-                <p>Skelejar is dedicated to the study of narrative failure. We believe that truly great villains aren't defeated by overwhelming force or superior planning from the heroes, but by the single, crucial, and often self-inflicted flaw buried deep within their otherwise perfect scheme.</p>
-                <p class="mt-4">We catalog these 'skelejar' flaws—the weak point, the emotional blind spot, the theatrical flourish—that ultimately lead to the downfall of characters like Emperor Palpatine and Thanos. It's an exploration of fictional psychology and the inevitable consequences of hubris.</p>
-            </section>
+            <div class="space-y-6 text-lg text-gray-300">
+                <p>
+                    Skelejar is an exploration into the nature of narrative perfection. In fiction, the most terrifying villains often seem invincible, their plans meticulously crafted and their power seemingly limitless. Yet, they always fall. This platform is dedicated to isolating that single, crucial **fatal flaw**—the one character trait, assumption, or emotional blind spot that ultimately leads to their downfall.
+                </p>
+                <p>
+                    We believe that the flaw is not a weakness in the writing, but the very mechanism that makes the story compelling. It demonstrates that even absolute power cannot overcome basic human (or sentient being) errors like **hubris, jealousy, sentimentality, or obsession.**
+                </p>
+            </div>
+        </section>
 
-            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
-                <h3 class="text-3xl font-bold text-accent-red mb-4">The Methodology</h3>
-                <p>Each flaw analyzed on Skelejar is distilled to a single, easily digestible concept. Our team scrutinizes the source material to isolate the point of failure that, had it been avoided, would have allowed the villain's plan to succeed. This isn't about rewriting the plot; it's about identifying the one, necessary bone of contention that the hero always exploits.</p>
-            </section>
-            
-            <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700">
-                <h3 class="text-3xl font-bold text-accent-red mb-4">Contribute</h3>
-                <p>Think a villain's true weakness has been overlooked? We rely on community input to keep our database sharp. Use the "Submit Flaw" button to send us your analysis. We're looking for compelling arguments that identify the one fatal flaw, not just general poor choices.</p>
-            </section>
+        <section>
+            <h2 class="text-4xl font-bold mb-6 text-accent-red">Our Manifesto</h2>
+            <ul class="list-disc list-inside space-y-4 text-gray-300 pl-4">
+                <li><strong class="text-gray-50">Isolate the Single Point:</strong> We commit to identifying only one central flaw. No laundry lists of weaknesses.</li>
+                <li><strong class="text-gray-50">Character Over Plot:</strong> The flaw must be rooted in the villain's **character**, not just a plot device.</li>
+                <li><strong class="text-gray-50">Celebrate the Inevitable:</strong> We celebrate the moment the perfect plan breaks because of the beautifully imperfect nature of its creator.</li>
+            </ul>
+        </section>
 
-        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark-card mt-12 py-6 border-t border-gray-700">
-        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
-            &copy; 2024 Skelejar. Exposing the flaws in perfect plans.
+    <!-- Newsletter Section (Above Footer) -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8 bg-dark-card rounded-xl shadow-lg border border-gray-700/50 text-center">
+        <h2 class="text-3xl font-bold text-gray-50 mb-3">Don't Miss the Next Flaw</h2>
+        <p class="text-gray-400 mb-6">Subscribe to our newsletter for deep-dive analysis on the latest villain downfalls.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <input type="email" placeholder="Enter your email address" class="w-full sm:w-80 p-3 rounded-lg border border-gray-600 bg-gray-800 text-gray-200 focus:border-accent-red focus:ring focus:ring-accent-red/50 transition-colors" required>
+            <button class="bg-accent-red hover:bg-red-500 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md transition-colors w-full sm:w-auto">
+                Subscribe
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer with Social Media Icons (Correctly placed at the bottom) -->
+    <footer class="bg-gray-900 py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
+            
+            <div class="text-lg font-semibold tracking-tight mb-4 sm:mb-0">
+                Skelejar: The Single Flaw
+            </div>
+
+            <div class="flex space-x-6 text-2xl mb-4 sm:mb-0">
+                <!-- Social Icons -->
+                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+            <div class="text-sm">
+                &copy; 2025 Skelejar. All Rights Reserved.
+            </div>
         </div>
     </footer>
 </body>
