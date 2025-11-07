@@ -18,7 +18,7 @@
         .text-accent-red { color: #f87171; } /* The specific red color */
         .bg-dark-card { background-color: #161b22; } /* Darker card background for headers/cards */
         
-        /* Collapse Transition CSS */
+        /* Collapse Transition CSS (Kept for in-line preview) */
         .collapse-content {
             max-height: 0;
             overflow: hidden;
@@ -45,7 +45,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- Navigation/Header Block (Now relative for absolute positioning of the nav links) -->
+    <!-- Navigation/Header Block -->
     <header class="bg-dark-card shadow-lg sticky top-0 z-20 border-b border-gray-700 relative">
         <div class="container mx-auto px-4 pt-16 pb-6 flex flex-col items-center">
             
@@ -58,10 +58,10 @@
                 </nav>
             </div>
             
-            <!-- 1. Centered Logo and Site Title (Pushed down by pt-16) -->
+            <!-- 1. Centered Logo and Site Title -->
             <div class="flex flex-col items-center mb-6">
                 <a href="index 2.html" class="text-3xl font-black text-white flex items-center space-x-3 transition-colors duration-300 hover:text-gray-300">
-                    <!-- LOGO IMAGE (UPDATED URL) -->
+                    <!-- LOGO IMAGE -->
                     <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" alt="Skelejar Skull Logo" class="w-10 h-10 object-contain">
                     <!-- Skelejar title is now red -->
                     <span class="text-4xl text-accent-red">Skelejar</span>
@@ -70,14 +70,14 @@
                 <h1 class="text-xl font-medium text-gray-400 mt-1">Exposing the Single Flaw in Great Villains</h1>
             </div>
 
-            <!-- 2. Search Bar (Standalone, Centered, and Wider) -->
+            <!-- 2. Search Bar -->
             <div class="flex justify-center w-full mb-4">
                 <div class="w-full max-w-lg">
                     <input id="search-input" type="text" placeholder="Search Villains or Flaws..." class="w-full p-3 rounded-xl bg-[#21262d] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent-red placeholder-gray-500 transition duration-200">
                 </div>
             </div>
 
-            <!-- 3. Filter Buttons (Centered) -->
+            <!-- 3. Filter Buttons -->
             <div id="filter-buttons" class="mt-2 flex flex-wrap justify-center gap-3">
                 <button data-filter="all" class="filter-btn px-4 py-2 text-sm rounded-full bg-accent-red text-white font-semibold shadow-md transition duration-200 active">All Flaws</button>
                 <button data-filter="hubris" class="filter-btn px-4 py-2 text-sm rounded-full bg-gray-700 text-white font-semibold hover:bg-gray-600 transition duration-200">Hubris</button>
@@ -103,17 +103,15 @@
                         <h3 class="text-xl font-semibold text-accent-red mb-3">The Fatal Flaw</h3>
                         <p class="text-gray-300 italic">"Underestimating Filial Love"</p>
 
-                        <button class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors duration-200" data-villain-id="palpatine">
-                            <span>Read Analysis</span>
+                        <!-- UPDATED: Button is now an Anchor tag <a> for navigation -->
+                        <a href="palpatine-flaw.html" class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-accent-red hover:bg-red-700 transition-colors duration-200" data-villain-id="palpatine">
+                            <span>Read Full Article</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                        </button>
-
-                        <div id="content-palpatine" class="collapse-content mt-4">
-                            <p class="text-gray-400 leading-relaxed">Palpatine’s entire master plan—to replace Darth Vader with Luke Skywalker—hinged on corruption through hatred. His fatal error was rooted in his own cynical worldview: he simply could not conceive of **unconditional love** as a quantifiable, destructive force. His dramatic, prolonged torture of Luke was meant to trigger hate but instead activated Vader's repressed fatherly bond. Had Palpatine simply executed Luke quickly and dispassionately, Vader would have remained loyal, and the Empire would have endured. His inability to tolerate emotion was his ultimate, self-inflicted wound.</p>
-                            <p class="text-sm mt-3 text-gray-500">Theme: Emotional Blindness / Hubris</p>
-                        </div>
+                        </a>
+                        
+                        <!-- The quick preview content is removed from the index page for a cleaner UI -->
                     </div>
                 </div>
             </article>
@@ -128,17 +126,13 @@
                         <h3 class="text-xl font-semibold text-accent-red mb-3">The Fatal Flaw</h3>
                         <p class="text-gray-300 italic">"The Need to Be Present"</p>
 
-                        <button class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors duration-200" data-villain-id="payne">
-                            <span>Read Analysis</span>
+                        <!-- Button updated to link to a conceptual article page -->
+                        <a href="payne-flaw.html" class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-accent-red hover:bg-red-700 transition-colors duration-200" data-villain-id="payne">
+                            <span>Read Full Article</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                        </button>
-
-                        <div id="content-payne" class="collapse-content mt-4">
-                            <p class="text-gray-400 leading-relaxed">Payne's bomb mechanism was functionally flawless: slow down, explode. His downfall wasn't the mechanics, but his **addiction to the spectacle**. His need to personally supervise the payoff, communicate with Jack Traven, and involve himself in the complex, rule-laden logistics of the transfer made him a target. If he had simply set the parameters and disappeared, instructing the authorities to leave the bag at a random, remote location with no contact, he would have collected the money and vanished. His pursuit of the dramatic, cinematic moment led directly to his capture.</p>
-                            <p class="text-sm mt-3 text-gray-500">Theme: Vain Intellectualism / Micromanagement</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </article>
@@ -153,17 +147,13 @@
                         <h3 class="text-xl font-semibold text-accent-red mb-3">The Fatal Flaw</h3>
                         <p class="text-gray-300 italic">"Assuming Immediate and Permanent Retirement"</p>
 
-                        <button class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors duration-200" data-villain-id="thanos">
-                            <span>Read Analysis</span>
+                        <!-- Button updated to link to a conceptual article page -->
+                        <a href="thanos-flaw.html" class="flaw-toggle mt-4 w-full text-left flex justify-between items-center text-white font-bold py-2 px-4 rounded-lg bg-accent-red hover:bg-red-700 transition-colors duration-200" data-villain-id="thanos">
+                            <span>Read Full Article</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                        </button>
-
-                        <div id="content-thanos" class="collapse-content mt-4">
-                            <p class="text-gray-400 leading-relaxed">Thanos’s plan was to balance the universe, and he succeeded. His fatal flaw was the **lack of a contingency plan post-success**. By immediately destroying the Infinity Stones and retreating to an idyllic farm, he signaled to the remaining Avengers that the threat was over and created a five-year period of stable grief. This stability allowed the heroes to mourn, regroup, and ultimately invent the means to time travel. Had he kept the Stones, or continued to rule with the Gauntlet, or even created a complex fail-safe, the Avengers would have had no opportunity to reverse his actions.</p>
-                            <p class="text-sm mt-3 text-gray-500">Theme: Complacency / Lack of Foresight</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </article>
@@ -178,49 +168,14 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT: Collapse, Search, and Filter Logic -->
+    <!-- INTERACTIVE JAVASCRIPT: Search and Filter Logic (Collapse logic removed) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const villainCards = document.querySelectorAll('.villain-card');
             const filterButtons = document.querySelectorAll('.filter-btn');
             const searchInput = document.getElementById('search-input');
-            const collapseButtons = document.querySelectorAll('.flaw-toggle');
-
-            // --- 1. Collapse Logic (Existing functionality) ---
-            collapseButtons.forEach(button => {
-                const contentId = button.getAttribute('data-villain-id');
-                const content = document.getElementById(`content-${contentId}`);
-                button.setAttribute('aria-expanded', 'false');
-
-                button.addEventListener('click', () => {
-                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                    
-                    if (isExpanded) {
-                        // Collapse the current content
-                        content.classList.remove('expanded');
-                        content.style.maxHeight = '0';
-                        button.setAttribute('aria-expanded', 'false');
-                    } else {
-                        // Close other expanded contents
-                        collapseButtons.forEach(btn => {
-                            if (btn !== button && btn.getAttribute('aria-expanded') === 'true') {
-                                const otherContentId = btn.getAttribute('data-villain-id');
-                                const otherContent = document.getElementById(`content-${otherContentId}`);
-                                otherContent.classList.remove('expanded');
-                                otherContent.style.maxHeight = '0';
-                                btn.setAttribute('aria-expanded', 'false');
-                            }
-                        });
-
-                        // Expand the clicked content
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.add('expanded');
-                        button.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
-
-            // --- 2. Filter Logic (New functionality) ---
+            
+            // --- 1. Filter Logic ---
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     // Remove active class from all buttons
@@ -247,7 +202,7 @@
                 });
             });
 
-            // --- 3. Search Logic (New functionality) ---
+            // --- 2. Search Logic ---
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase();
 
@@ -260,13 +215,11 @@
                      }
                 });
 
-
                 villainCards.forEach(card => {
                     const title = card.querySelector('h2').textContent.toLowerCase();
                     const flaw = card.querySelector('.text-gray-300.italic').textContent.toLowerCase();
-                    const analysis = card.querySelector('.collapse-content p:first-child').textContent.toLowerCase();
                     
-                    if (title.includes(searchTerm) || flaw.includes(searchTerm) || analysis.includes(searchTerm)) {
+                    if (title.includes(searchTerm) || flaw.includes(searchTerm)) {
                         card.style.display = 'block';
                     } else {
                         card.style.display = 'none';
