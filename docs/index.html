@@ -45,14 +45,14 @@
             height: 30px;
             margin-right: 8px;
             display: inline-block;
+            border-radius: 4px; /* Slightly rounded corners for the logo */
         }
     </style>
 </head>
 <body class="min-h-screen text-gray-100 antialiased">
 
-    <!-- Header & Navigation: FIX APPLIED - Logo is centered, links are on the right. -->
+    <!-- Header & Navigation: Centered Logo/Title, Right Links -->
     <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
-        <!-- Using 'relative' on nav to contain the absolute positioned logo -->
         <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-end items-center h-16">
             
             <!-- Logo Section: ABSOLUTELY CENTERED -->
@@ -71,6 +71,11 @@
             <div class="flex items-center space-x-6">
                 <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
+                <!-- Future/Hidden Sections -->
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
+                <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
             </div>
         </nav>
     </header>
