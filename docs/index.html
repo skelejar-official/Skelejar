@@ -69,13 +69,12 @@
             
             <!-- Nav Links: Right-Aligned (Center-Right as requested) -->
             <div class="flex items-center space-x-6">
-                <!-- *** FIXED: Linking to itself *** -->
                 <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
                 <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
-                <!-- Future/Hidden Sections -->
-                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
-                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
-                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
+                <!-- Updated links to new placeholder files -->
+                <a href="submit_flaw.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
+                <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
+                <a href="store.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
                 <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
             </div>
         </nav>
@@ -120,17 +119,19 @@
             </div>
         </section>
 
-        <!-- Villains Grid (THE ARTICLES/FLAWS) - Content matches categories -->
-        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 class="text-4xl font-bold mb-8 text-gray-50 text-center">The Skelejar Framework</h2>
+        
+        <!-- Villains Grid (THE CATEGORY DEFINITIONS) -->
+        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             
-            <!-- Villain Card 1: Hubris -->
+            <!-- Category Card 1: Hubris -->
             <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
                 <div class="p-6">
                     <h2 class="text-3xl font-bold mb-2 text-accent-red">Hubris (The Arrogant Overlord)</h2>
                     <p class="text-gray-300 mb-4">The ultimate display of overconfidence. The villain refuses to believe a lesser foe could possess the skill or wit to oppose them.</p>
                     
                     <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="hubris" aria-controls="content-hubris" aria-expanded="false">
-                        <span>The Single Flaw</span>
+                        <span>The Flaw Defined</span>
                         <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
@@ -138,19 +139,19 @@
                 <div id="content-hubris" class="collapse-content px-6 pb-6 text-gray-400">
                     <hr class="border-gray-700 mb-4">
                     <p class="text-sm">
-                        <strong class="text-gray-200">The Flaw: Underestimation.</strong> The villain consistently relies on superior power, leading them to delay the final blow, offer a verbose monologue, or discard the hero as irrelevant. This brief window, born from pure arrogance, is the only opportunity the hero needs to capitalize on the villain's mistake.
+                        <strong class="text-gray-200">Key Mistake: Underestimation.</strong> The villain consistently relies on superior power, leading them to delay the final blow, offer a verbose monologue, or discard the hero as irrelevant. This brief window, born from pure arrogance, is the only opportunity the hero needs to capitalize on the villain's mistake.
                     </p>
                 </div>
             </article>
 
-            <!-- Villain Card 2: Emotional -->
+            <!-- Category Card 2: Emotional -->
             <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
                 <div class="p-6">
                     <h2 class="text-3xl font-bold mb-2 text-accent-red">Emotional (The Sentimental Despot)</h2>
                     <p class="text-gray-300 mb-4">A lapse in control due to a deep-seated connection to the past, a moment of rage, or unexpected pity that derails the operation.</p>
                     
                     <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="emotional" aria-controls="content-emotional" aria-expanded="false">
-                        <span>The Single Flaw</span>
+                        <span>The Flaw Defined</span>
                         <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
@@ -158,19 +159,19 @@
                 <div id="content-emotional" class="collapse-content px-6 pb-6 text-gray-400">
                     <hr class="border-gray-700 mb-4">
                     <p class="text-sm">
-                        <strong class="text-gray-200">The Flaw: A Single Tether.</strong> Despite purging all weaknesses, the villain maintains one emotional connection—a child, an old mentor, a sentimental object. The hero weaponizes this one remaining shred of humanity, forcing the villain into an impossible choice that sacrifices their ultimate goal.
+                        <strong class="text-gray-200">Key Mistake: A Single Tether.</strong> Despite purging all weaknesses, the villain maintains one emotional connection—a child, an old mentor, a sentimental object. The hero weaponizes this one remaining shred of humanity, forcing the villain into an impossible choice that sacrifices their ultimate goal.
                     </p>
                 </div>
             </article>
 
-            <!-- Villain Card 3: Pragmatism -->
+            <!-- Category Card 3: Pragmatism -->
             <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
                 <div class="p-6">
                     <h2 class="text-3xl font-bold mb-2 text-accent-red">Pragmatism (The Logical Strategist)</h2>
                     <p class="text-gray-300 mb-4">A genius whose rigid adherence to logic and efficiency prevents them from comprehending chaos or irrational human behavior.</p>
                     
                     <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="pragmatism" aria-controls="content-pragmatism" aria-expanded="false">
-                        <span>The Single Flaw</span>
+                        <span>The Flaw Defined</span>
                         <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
@@ -178,11 +179,63 @@
                 <div id="content-pragmatism" class="collapse-content px-6 pb-6 text-gray-400">
                     <hr class="border-gray-700 mb-4">
                     <p class="text-sm">
-                        <strong class="text-gray-200">The Flaw: Blind Spot for Chaos.</strong> The villain built their plan based on predictable probabilities. They cannot compute or react to a hero who acts randomly, sacrificing themselves, or taking a risk that is logically indefensible. The unpredictable nature of humanity becomes the ultimate countermeasure to their perfect, sterile plan.
+                        <strong class="text-gray-200">Key Mistake: Blind Spot for Chaos.</strong> The villain built their plan based on predictable probabilities. They cannot compute or react to a hero who acts randomly, sacrificing themselves, or taking a risk that is logically indefensible. The unpredictable nature of humanity becomes the ultimate countermeasure to their perfect, sterile plan.
                     </p>
                 </div>
             </article>
 
+        </section>
+
+        <h2 class="text-4xl font-bold mb-8 text-gray-50 text-center">Latest Analysis</h2>
+        
+        <!-- VILLAIN ARTICLE CARDS START HERE -->
+        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- NEW CARD: THANOS - PRAGMATISM -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300 col-span-full sm:col-span-1">
+                <div class="p-6">
+                    <span class="inline-block bg-green-900/50 text-green-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-green-700">PRAGMATISM</span>
+                    <h3 class="text-3xl font-bold mb-2 text-gray-50">Thanos (Avengers: Infinity War)</h3>
+                    <p class="text-gray-300 mb-4">The Mad Titan failed not because he loved too little, but because he was ruled by a cold, mathematical certainty.</p>
+                    
+                    <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="thanos" aria-controls="content-thanos" aria-expanded="false">
+                        <span>The Single Flaw Revealed</span>
+                        <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="content-thanos" class="collapse-content px-6 pb-6 text-gray-400">
+                    <hr class="border-gray-700 mb-4">
+                    <p class="text-sm">
+                        <strong class="text-gray-200">The Single Flaw: Rigidity of Logic (The Flawed Algorithm).</strong> Thanos was defeated because he could only conceive of one solution (the Snap), failing to recognize that the Stones offered infinite possibilities, like **doubling the universe's resources**. His rigid, mathematical ideology blinded him to the superior pragmatic choice, making his solution inherently flawed from the start.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Placeholder Card for future content -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-gray-500 transition-all duration-300 col-span-full sm:col-span-1">
+                <div class="p-6 opacity-50">
+                    <span class="inline-block bg-gray-500/50 text-gray-400 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-gray-600">HUBRIS</span>
+                    <h3 class="text-3xl font-bold mb-2 text-gray-50">Emperor Palpatine (Star Wars)</h3>
+                    <p class="text-gray-300 mb-4">Analysis: Why the Master Manipulator was too confident to secure his final victory.</p>
+                    <div class="h-10 bg-gray-700/50 rounded-lg flex items-center justify-center text-sm font-semibold">
+                        Coming Soon
+                    </div>
+                </div>
+            </article>
+
+            <!-- Placeholder Card for future content -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-gray-500 transition-all duration-300 col-span-full sm:col-span-1">
+                <div class="p-6 opacity-50">
+                    <span class="inline-block bg-red-900/50 text-red-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-red-700">EMOTIONAL</span>
+                    <h3 class="text-3xl font-bold mb-2 text-gray-50">Howard Payne (Speed)</h3>
+                    <p class="text-gray-300 mb-4">Analysis: How a simple grudge proved to be the ultimate self-destruct mechanism.</p>
+                    <div class="h-10 bg-gray-700/50 rounded-lg flex items-center justify-center text-sm font-semibold">
+                        Coming Soon
+                    </div>
+                </div>
+            </article>
+            
         </section>
 
     </main>
@@ -208,17 +261,17 @@
             </div>
 
             <div class="flex space-x-6 text-2xl mb-4 sm:mb-0">
-                <!-- Social Icons -->
-                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok">
+                <!-- Social Icons - Using placeholder links for now -->
+                <a href="#tiktok" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok">
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
-                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube">
+                <a href="#youtube" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube">
                     <i class="fa-brands fa-youtube"></i>
                 </a>
-                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)">
+                <a href="#x-twitter" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)">
                     <i class="fa-brands fa-square-x-twitter"></i>
                 </a>
-                <a href="#" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram">
+                <a href="#instagram" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </div>
@@ -244,6 +297,15 @@
                 button.addEventListener('click', () => {
                     const isExpanded = button.getAttribute('aria-expanded') === 'true';
                     
+                    // Collapse all other expanded content first (optional, but good UX)
+                    document.querySelectorAll('.collapse-content.expanded').forEach(item => {
+                        if (item !== content) {
+                            item.classList.remove('expanded');
+                            item.style.maxHeight = '0';
+                            document.querySelector(`[data-villain-id="${item.id.replace('content-', '')}"]`).setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
                     if (isExpanded) {
                         // Collapse the content
                         content.classList.remove('expanded');
