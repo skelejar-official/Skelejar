@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skelejar: About</title>
+    <title>About Skelejar</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Font Awesome v6 for social icons -->
@@ -19,67 +19,78 @@
         .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
         
-        /* Collapse Transition CSS (Included for consistency) */
-        .collapse-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
-        .collapse-content.expanded {
-            max-height: 3000px; 
+        /* Custom size for the Skelejar Logo */
+        .skelejar-logo {
+            width: 30px; /* Adjust size as needed */
+            height: 30px;
+            margin-right: 8px;
+            display: inline-block;
+            border-radius: 4px; /* Slightly rounded corners for the logo */
         }
     </style>
 </head>
 <body class="min-h-screen text-gray-100 antialiased">
 
-    <!-- Header & Navigation: Now includes SVG Logo -->
+    <!-- Header & Navigation: Centered Logo/Title, Right Links (Consistent with index 2.html) -->
     <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tight flex items-center">
-                <!-- SVG Icon (Logo) -->
-                <svg class="w-6 h-6 mr-2 text-accent-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 2a2 2 0 00-2 2v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-2V4a2 2 0 00-2-2h-4zM12 6v14m0-14a2 2 0 110-4 2 2 0 010 4z"></path>
-                </svg>
+        <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-end items-center h-16">
+            
+            <!-- Logo Section: ABSOLUTELY CENTERED -->
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-extrabold tracking-tight flex items-center">
+                <img 
+                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
+                    alt="Skelejar Logo" 
+                    class="skelejar-logo" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/30x30/f87171/ffffff?text=Logo'"
+                >
                 <a href="index 2.html" class="text-gray-50 hover:text-accent-red transition-colors">Skelejar</a>
             </div>
             
+            <!-- Nav Links: Right-Aligned (Center-Right as requested) -->
             <div class="flex items-center space-x-6">
-                <!-- Nav Links -->
                 <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-accent-red transition-colors font-medium">About</a>
+                <a href="about.html" class="text-accent-red font-medium">About</a>
+                <!-- Future/Hidden Sections -->
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
+                <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
+                <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
             </div>
         </nav>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <section class="mb-12">
-            <h1 class="text-5xl font-black mb-6 text-gray-50 border-b pb-4 border-gray-700">
-                About Skelejar: The Art of the Flaw
-            </h1>
-            
-            <div class="space-y-6 text-lg text-gray-300">
-                <p>
-                    Skelejar is an exploration into the nature of narrative perfection. In fiction, the most terrifying villains often seem invincible, their plans meticulously crafted and their power seemingly limitless. Yet, they always fall. This platform is dedicated to isolating that single, crucial **fatal flaw**—the one character trait, assumption, or emotional blind spot that ultimately leads to their downfall.
-                </p>
-                <p>
-                    We believe that the flaw is not a weakness in the writing, but the very mechanism that makes the story compelling. It demonstrates that even absolute power cannot overcome basic human (or sentient being) errors like **hubris, jealousy, sentimentality, or obsession.**
-                </p>
-            </div>
+        <h1 class="text-5xl font-bold mb-8 text-gray-50 text-center">Our Mission: The Single Flaw</h1>
+        
+        <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700/50 mb-8">
+            <h2 class="text-3xl font-semibold text-accent-red mb-4">What is the Skelejar Project?</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Skelejar is dedicated to the systematic analysis of fictional antagonists, proving that even the most cunning, powerful, or formidable villains fail due to a **single, fatal flaw** in their character or planning. We categorize these downfalls—be it Hubris, Emotional Blindness, or flawed Pragmatism—to create a comprehensive library of narrative failure.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                We believe that understanding why villains fail offers profound insight into storytelling, human psychology, and even real-world strategic thinking. Every great villain is one step from success, and that step is usually tripped by their own mind.
+            </p>
         </section>
 
-        <section>
-            <h2 class="text-4xl font-bold mb-6 text-accent-red">Our Manifesto</h2>
-            <ul class="list-disc list-inside space-y-4 text-gray-300 pl-4">
-                <li><strong class="text-gray-50">Isolate the Single Point:</strong> We commit to identifying only one central flaw. No laundry lists of weaknesses.</li>
-                <li><strong class="text-gray-50">Character Over Plot:</strong> The flaw must be rooted in the villain's **character**, not just a plot device.</li>
-                <li><strong class="text-gray-50">Celebrate the Inevitable:</strong> We celebrate the moment the perfect plan breaks because of the beautifully imperfect nature of its creator.</li>
+        <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700/50">
+            <h2 class="text-3xl font-semibold text-accent-red mb-4">The Categories of Downfall</h2>
+            <ul class="space-y-4 text-gray-300">
+                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
+                    <strong class="font-bold">Hubris:</strong> The villain's belief in their own supremacy leads them to take unnecessary risks, prolong the climax, or completely underestimate the hero's capabilities.
+                </li>
+                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
+                    <strong class="font-bold">Emotional:</strong> A failure caused by a personal connection, uncontrollable rage, or an inability to comprehend empathy, love, or sacrifice—weaknesses the hero exploits.
+                </li>
+                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
+                    <strong class="font-bold">Pragmatism:</strong> The meticulous planner is defeated by the one variable they couldn't calculate: human irrationality, chaos, or a systemic blind spot in their own, supposedly perfect, logic.
+                </li>
             </ul>
         </section>
 
     </main>
 
-    <!-- Newsletter Section (Above Footer) -->
+    <!-- Newsletter Section (Above Footer - Consistent) -->
     <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8 bg-dark-card rounded-xl shadow-lg border border-gray-700/50 text-center">
         <h2 class="text-3xl font-bold text-gray-50 mb-3">Don't Miss the Next Flaw</h2>
         <p class="text-gray-400 mb-6">Subscribe to our newsletter for deep-dive analysis on the latest villain downfalls.</p>
@@ -91,7 +102,7 @@
         </div>
     </section>
 
-    <!-- Footer with Social Media Icons (Correctly placed at the bottom) -->
+    <!-- Footer with Social Media Icons (Consistent) -->
     <footer class="bg-gray-900 py-10 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
             
