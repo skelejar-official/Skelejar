@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Skelejar</title>
+    <title>Skelejar: Exposing the Single Flaw in Great Villains</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Font Awesome v6 for social icons -->
@@ -19,6 +19,26 @@
         .text-accent-red { color: #f87171; } /* Tailwind Red-400 */
         .bg-dark-card { background-color: #161b22; } /* Darker card background */
         
+        /* Collapse Transition CSS for the Flaw content */
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .collapse-content.expanded {
+            /* Large max-height to ensure all content displays smoothly */
+            max-height: 3000px; 
+        }
+        .flaw-toggle:hover svg {
+            transform: rotate(180deg);
+        }
+        .flaw-toggle[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+        .flaw-toggle svg {
+            transition: transform 0.3s ease;
+        }
+        
         /* Custom size for the Skelejar Logo */
         .skelejar-logo {
             width: 30px; /* Adjust size as needed */
@@ -31,12 +51,13 @@
 </head>
 <body class="min-h-screen text-gray-100 antialiased">
 
-    <!-- Header & Navigation: Centered Logo/Title, Right Links (Consistent with index 2.html) -->
+    <!-- Header & Navigation: Centered Logo/Title, Right Links -->
     <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
         <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-end items-center h-16">
             
             <!-- Logo Section: ABSOLUTELY CENTERED -->
             <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-extrabold tracking-tight flex items-center">
+                <!-- LOGO IMAGE (Verified Link) to the LEFT of the Skelejar text -->
                 <img 
                     src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
                     alt="Skelejar Logo" 
@@ -49,7 +70,7 @@
             <!-- Nav Links: Right-Aligned (Center-Right as requested) -->
             <div class="flex items-center space-x-6">
                 <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-accent-red font-medium">About</a>
+                <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
                 <!-- Future/Hidden Sections -->
                 <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
                 <a href="#" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
@@ -59,38 +80,113 @@
         </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <h1 class="text-5xl font-bold mb-8 text-gray-50 text-center">Our Mission: The Single Flaw</h1>
-        
-        <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700/50 mb-8">
-            <h2 class="text-3xl font-semibold text-accent-red mb-4">What is the Skelejar Project?</h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                Skelejar is dedicated to the systematic analysis of fictional antagonists, proving that even the most cunning, powerful, or formidable villains fail due to a **single, fatal flaw** in their character or planning. We categorize these downfalls—be it Hubris, Emotional Blindness, or flawed Pragmatism—to create a comprehensive library of narrative failure.
-            </p>
-            <p class="text-gray-300 leading-relaxed">
-                We believe that understanding why villains fail offers profound insight into storytelling, human psychology, and even real-world strategic thinking. Every great villain is one step from success, and that step is usually tripped by their own mind.
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-6xl sm:text-7xl font-black mb-4 text-gray-50 tracking-tighter">
+                Exposing the <span class="text-accent-red">Single Flaw</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Exposing the Single Flaw in Great Villains
             </p>
         </section>
+        
+        <!-- Search and Filter Section -->
+        <section class="max-w-4xl mx-auto mb-16 px-4">
+            <!-- Search Bar -->
+            <div class="mb-6">
+                <input type="search" placeholder="Search by category, movie, TV show, or flaw..." 
+                       class="w-full p-4 rounded-lg border border-gray-700 bg-gray-800 text-gray-200 placeholder-gray-500 
+                              focus:border-accent-red focus:ring focus:ring-accent-red/50 transition-colors shadow-xl"
+                       aria-label="Search for flaws or villains">
+            </div>
 
-        <section class="bg-dark-card p-8 rounded-xl shadow-2xl border border-gray-700/50">
-            <h2 class="text-3xl font-semibold text-accent-red mb-4">The Categories of Downfall</h2>
-            <ul class="space-y-4 text-gray-300">
-                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
-                    <strong class="font-bold">Hubris:</strong> The villain's belief in their own supremacy leads them to take unnecessary risks, prolong the climax, or completely underestimate the hero's capabilities.
-                </li>
-                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
-                    <strong class="font-bold">Emotional:</strong> A failure caused by a personal connection, uncontrollable rage, or an inability to comprehend empathy, love, or sacrifice—weaknesses the hero exploits.
-                </li>
-                <li class="p-3 bg-gray-700/30 rounded-lg border-l-4 border-accent-red">
-                    <strong class="font-bold">Pragmatism:</strong> The meticulous planner is defeated by the one variable they couldn't calculate: human irrationality, chaos, or a systemic blind spot in their own, supposedly perfect, logic.
-                </li>
-            </ul>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="px-6 py-2 rounded-full bg-accent-red text-gray-900 font-semibold hover:bg-red-500 transition-colors shadow-md">
+                    All Flaws
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-700 text-gray-200 font-medium hover:bg-gray-600 transition-colors shadow-md border border-gray-600">
+                    Hubris
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-700 text-gray-200 font-medium hover:bg-gray-600 transition-colors shadow-md border border-gray-600">
+                    Emotional
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-700 text-gray-200 font-medium hover:bg-gray-600 transition-colors shadow-md border border-gray-600">
+                    Pragmatism
+                </button>
+            </div>
+        </section>
+
+        <!-- Villains Grid (THE ARTICLES/FLAWS) - Content matches categories -->
+        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Villain Card 1: Hubris -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold mb-2 text-accent-red">Hubris (The Arrogant Overlord)</h2>
+                    <p class="text-gray-300 mb-4">The ultimate display of overconfidence. The villain refuses to believe a lesser foe could possess the skill or wit to oppose them.</p>
+                    
+                    <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="hubris" aria-controls="content-hubris" aria-expanded="false">
+                        <span>The Single Flaw</span>
+                        <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="content-hubris" class="collapse-content px-6 pb-6 text-gray-400">
+                    <hr class="border-gray-700 mb-4">
+                    <p class="text-sm">
+                        <strong class="text-gray-200">The Flaw: Underestimation.</strong> The villain consistently relies on superior power, leading them to delay the final blow, offer a verbose monologue, or discard the hero as irrelevant. This brief window, born from pure arrogance, is the only opportunity the hero needs to capitalize on the villain's mistake.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Villain Card 2: Emotional -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold mb-2 text-accent-red">Emotional (The Sentimental Despot)</h2>
+                    <p class="text-gray-300 mb-4">A lapse in control due to a deep-seated connection to the past, a moment of rage, or unexpected pity that derails the operation.</p>
+                    
+                    <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="emotional" aria-controls="content-emotional" aria-expanded="false">
+                        <span>The Single Flaw</span>
+                        <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="content-emotional" class="collapse-content px-6 pb-6 text-gray-400">
+                    <hr class="border-gray-700 mb-4">
+                    <p class="text-sm">
+                        <strong class="text-gray-200">The Flaw: A Single Tether.</strong> Despite purging all weaknesses, the villain maintains one emotional connection—a child, an old mentor, a sentimental object. The hero weaponizes this one remaining shred of humanity, forcing the villain into an impossible choice that sacrifices their ultimate goal.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Villain Card 3: Pragmatism -->
+            <article class="bg-dark-card rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 hover:border-accent-red transition-all duration-300">
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold mb-2 text-accent-red">Pragmatism (The Logical Strategist)</h2>
+                    <p class="text-gray-300 mb-4">A genius whose rigid adherence to logic and efficiency prevents them from comprehending chaos or irrational human behavior.</p>
+                    
+                    <button class="flaw-toggle flex items-center justify-between w-full py-2 px-3 bg-gray-700/50 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors" data-villain-id="pragmatism" aria-controls="content-pragmatism" aria-expanded="false">
+                        <span>The Single Flaw</span>
+                        <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="content-pragmatism" class="collapse-content px-6 pb-6 text-gray-400">
+                    <hr class="border-gray-700 mb-4">
+                    <p class="text-sm">
+                        <strong class="text-gray-200">The Flaw: Blind Spot for Chaos.</strong> The villain built their plan based on predictable probabilities. They cannot compute or react to a hero who acts randomly, sacrificing themselves, or taking a risk that is logically indefensible. The unpredictable nature of humanity becomes the ultimate countermeasure to their perfect, sterile plan.
+                    </p>
+                </div>
+            </article>
+
         </section>
 
     </main>
 
-    <!-- Newsletter Section (Above Footer - Consistent) -->
+    <!-- Newsletter Section (Above Footer) -->
     <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8 bg-dark-card rounded-xl shadow-lg border border-gray-700/50 text-center">
         <h2 class="text-3xl font-bold text-gray-50 mb-3">Don't Miss the Next Flaw</h2>
         <p class="text-gray-400 mb-6">Subscribe to our newsletter for deep-dive analysis on the latest villain downfalls.</p>
@@ -102,7 +198,7 @@
         </div>
     </section>
 
-    <!-- Footer with Social Media Icons (Consistent) -->
+    <!-- Footer with Social Media Icons -->
     <footer class="bg-gray-900 py-10 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
             
@@ -131,5 +227,37 @@
             </div>
         </div>
     </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT: Collapse Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.flaw-toggle');
+
+            buttons.forEach(button => {
+                const contentId = button.getAttribute('data-villain-id');
+                const content = document.getElementById(`content-${contentId}`);
+                
+                // Initialize the ARIA state
+                button.setAttribute('aria-expanded', 'false');
+
+                button.addEventListener('click', () => {
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    
+                    if (isExpanded) {
+                        // Collapse the content
+                        content.classList.remove('expanded');
+                        content.style.maxHeight = '0';
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Expand the content
+                        // Note: scrollHeight is used to measure the content height
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.classList.add('expanded');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
