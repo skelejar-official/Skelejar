@@ -3,212 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flaw Themes - Skelejar</title>
+    <title>Skelejar: Core Flaw Themes</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3HzqW3l/p1nSSQzWbB4kH6C1/A6U3J4sE2e3uH4M4t6XzU5wA0E7dF0Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
+            background-color: #0d1117; 
         }
+        /* Custom colors and styles */
         .text-accent-red { color: #f87171; }
         .bg-dark-card { background-color: #161b22; }
-        .skelejar-logo {
-            width: 30px; 
-            height: 30px;
-            margin-right: 8px;
-            display: inline-block;
-            border-radius: 4px;
+        .header-logo {
+            height: 40px; 
+            width: auto;
+            margin-right: 8px; 
         }
-        .header-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
+        .theme-card {
+            background-color: #161b22;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .theme-card:hover {
+            transform: translateY(-3px);
+            border: 1px solid #f87171;
         }
     </style>
 </head>
-<body class="min-h-screen text-gray-100 antialiased">
-
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 h-16 header-grid">
+<body class="p-0 sm:p-0">
+    
+    <!-- HEADER -->
+    <header class="bg-dark-card text-white py-4 shadow-xl sticky top-0 z-20 border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             
-            <!-- Left-aligned links -->
-            <div class="flex items-center space-x-6 justify-self-start">
-                <!-- Placeholder for balance -->
+            <!-- LEFT CONTAINER: Desktop Links + Mobile Centering Spacer -->
+            <div class="flex items-center">
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-xl font-semibold hover:text-accent-red transition-colors">Home</a>
+                    <a href="about.html" class="text-xl font-semibold hover:text-accent-red transition-colors">About</a>
+                </div>
+                <!-- MOBILE SYMMETRY SPACER -->
+                <div class="md:hidden w-10 h-10 p-2 invisible"></div>
             </div>
-
-            <!-- Center Logo and Title -->
-            <div class="text-2xl font-extrabold tracking-tight flex items-center justify-center">
+            
+            <!-- Title and Logo (Perfectly Centered) -->
+            <a href="index.html" class="flex items-center">
                 <img 
                     src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
                     alt="Skelejar Logo" 
-                    class="skelejar-logo" 
-                    onerror="this.onerror=null;this.src='https://placehold.co/30x30/f87171/ffffff?text=SJ'"
+                    class="header-logo"
+                    onerror="this.onerror=null; this.src='https://placehold.co/40x40/f87171/ffffff?text=Logo';"
                 >
-                <a href="index.html" class="text-gray-50 hover:text-accent-red transition-colors">Skelejar</a>
-            </div>
-            
-            <!-- Center-Right Navigation Links -->
-            <div class="flex items-center space-x-6 justify-self-end">
-                <a href="index.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
-                <a href="submit_flaw.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
-                <a href="flaw_themes.html" class="text-accent-red font-medium">Flaw Themes</a>
-                <a href="store.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
-                <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
+                <span class="text-3xl font-extrabold tracking-tight text-accent-red hover:text-white transition-colors">
+                    Skelejar
+                </span>
+            </a>
+
+            <!-- RIGHT CONTAINER: Desktop Links + Mobile Menu Button -->
+            <div class="flex items-center">
+                <div class="hidden md:flex space-x-8">
+                    <a href="submit_flaw.html" class="text-xl font-semibold hover:text-accent-red transition-colors">Submit Flaw</a>
+                    <a href="flaw_themes.html" class="text-xl font-semibold text-accent-red transition-colors">Flaw Themes</a>
+                    <a href="store.html" class="text-xl font-semibold hover:text-accent-red transition-colors">Store</a>
+                </div>
+                
+                <button 
+                    id="menu-button" 
+                    class="text-white md:hidden p-2 rounded-lg hover:bg-red-900/30 transition duration-300 w-10 h-10 flex items-center justify-center" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu" 
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-gray-700 p-4">
+            <a href="index.html" class="block py-2 text-gray-300 hover:text-accent-red font-medium">Home</a>
+            <a href="about.html" class="block py-2 text-gray-300 hover:text-accent-red font-medium">About</a>
+            <a href="submit_flaw.html" class="block py-2 text-gray-300 hover:text-accent-red font-medium">Submit Flaw</a>
+            <a href="flaw_themes.html" class="block py-2 text-accent-red font-medium">Flaw Themes</a>
+            <a href="store.html" class="block py-2 text-gray-300 hover:text-accent-red font-medium">Store</a>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-black mb-3 text-gray-50 tracking-tighter">
-                The Recurring Flaw Themes
+    <!-- MAIN CONTENT -->
+    <main class="max-w-6xl mx-auto p-4 sm:p-8 z-10">
+
+        <section class="text-center py-10">
+            <h1 class="text-5xl font-extrabold text-white tracking-tighter mb-4">
+                The <span class="text-accent-red">Core Flaw Themes</span>
             </h1>
-            <p class="text-xl text-gray-400">
-                A glossary of the common single failure patterns that doom even the most powerful villains.
+            <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+                All villain downfalls can be classified into one of these three fundamental categories of failure.
             </p>
-        </header>
+        </section>
 
         <!-- Themes Grid -->
-        <section class="space-y-12">
-            
-            <!-- Category: HUBRIS -->
-            <div class="bg-dark-card p-8 rounded-xl shadow-2xl border-l-4 border-accent-red">
-                <h2 class="text-4xl font-bold mb-6 text-accent-red">Hubris Themes</h2>
-                <div class="space-y-6">
-                    <!-- Flaw Theme 1 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">The Undefeated Monologue</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The villain must explain their genius plan, offering the hero a crucial two-minute window to find the escape or exploit the fatal flaw while they gloat.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 2 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">The Underestimation of Pity</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            A highly intelligent villain dismisses the power of empathy or compassion, failing to plan for a moment where a secondary character or even a heroic sacrifice alters the entire outcome.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 3 -->
-                    <div class="pb-2">
-                        <h3 class="text-xl font-semibold text-gray-50">The Unsecured Bolt</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            Arrogance dictates that a secondary fail-safe or a minor security element is unnecessary. This one oversight (the thermal exhaust port, the self-destruct mechanism override) is all the hero needs.
-                        </p>
-                    </div>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 text-white">
+
+            <!-- Theme 1: Hubris -->
+            <div class="theme-card">
+                <div class="text-4xl text-accent-red mb-3">
+                    <i class="fas fa-crown"></i>
                 </div>
+                <h2 class="text-2xl font-bold mb-3">Hubris</h2>
+                <p class="text-gray-400">
+                    The flaw of **arrogance and overconfidence**. These villains are so convinced of their own intellectual or physical superiority that they deliberately expose themselves to danger, indulge in unnecessary monologues, or create convoluted schemes solely to prove their genius. Their failure is born of ego.
+                </p>
+                <p class="text-sm text-gray-500 italic mt-3">
+                    *Example: Palpatine's need to personally witness Luke's corruption.*
+                </p>
             </div>
 
-            <!-- Category: EMOTIONAL -->
-            <div class="bg-dark-card p-8 rounded-xl shadow-2xl border-l-4 border-red-500">
-                <h2 class="text-4xl font-bold mb-6 text-red-500">Emotional Themes</h2>
-                <div class="space-y-6">
-                    <!-- Flaw Theme 1 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">The Sentimental Tether</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The villain failed to truly purge their past, leaving one sentimental connection (a family member, a former mentor, a childhood friend) that the hero can weaponize.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 2 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">Vindictive Rage</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            Victory is in hand, but the villain is so consumed by personal vengeance or rage against the hero that they abandon their strategic objective to achieve a satisfying—but risky—final confrontation.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 3 -->
-                    <div class="pb-2">
-                        <h3 class="text-xl font-semibold text-gray-50">The Loyalty Trap</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The villain requires absolute loyalty but fails to recognize that blind loyalty can be brittle. This theme manifests when a trusted lieutenant betrays them or when a simple command is disobeyed out of fear or personal gain.
-                        </p>
-                    </div>
+            <!-- Theme 2: Emotional -->
+            <div class="theme-card">
+                <div class="text-4xl text-accent-red mb-3">
+                    <i class="fas fa-heart-broken"></i>
                 </div>
+                <h2 class="text-2xl font-bold mb-3">Emotional</h2>
+                <p class="text-gray-400">
+                    The flaw of **dependency, vengeance, or attachment**. This villain sacrifices their long-term, rational goals for a short-term emotional payoff. They might seek validation from a rival, be unable to kill a family member, or act out of pure, uncontrollable rage. Their heart is their weakness.
+                </p>
+                <p class="text-sm text-gray-500 italic mt-3">
+                    *Example: The Joker's dependency on Batman to validate his philosophy.*
+                </p>
             </div>
 
-            <!-- Category: PRAGMATISM -->
-            <div class="bg-dark-card p-8 rounded-xl shadow-2xl border-l-4 border-yellow-500">
-                <h2 class="text-4xl font-bold mb-6 text-yellow-500">Pragmatism Themes</h2>
-                <div class="space-y-6">
-                    <!-- Flaw Theme 1 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">Rigidity of Logic (The Flawed Algorithm)</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The villain's plan is mathematically perfect but cannot account for irrational, emotional, or chaotic human actions. Their inability to adapt to the unpredictable leads to their defeat.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 2 -->
-                    <div class="border-b border-gray-700 pb-4">
-                        <h3 class="text-xl font-semibold text-gray-50">The Over-Engineered Trap</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The complexity of the system designed to ensure success (e.g., redundant systems, excessive security) ultimately provides the exact set of conditions the hero needs to breach it.
-                        </p>
-                    </div>
-                    <!-- Flaw Theme 3 -->
-                    <div class="pb-2">
-                        <h3 class="text-xl font-semibold text-gray-50">The Economic Flaw</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            The villain prioritizes resource management or efficiency over total destruction or total victory, leaving a small crack in their defenses to save a negligible cost.
-                        </p>
-                    </div>
+            <!-- Theme 3: Pragmatism -->
+            <div class="theme-card">
+                <div class="text-4xl text-accent-red mb-3">
+                    <i class="fas fa-cogs"></i>
                 </div>
+                <h2 class="text-2xl font-bold mb-3">Pragmatism</h2>
+                <p class="text-gray-400">
+                    The flaw of **excessive complexity and control**. This villain's downfall is not caused by ego or emotion, but by their *inability to stop tinkering*. They set up too many checkpoints, require unnecessary verification, or over-engineer a simple goal, creating extra points of failure for the hero to exploit.
+                </p>
+                <p class="text-sm text-gray-500 italic mt-3">
+                    *Example: Howard Payne's complex scheme to verify the bank transfer.*
+                </p>
             </div>
 
         </section>
-        
-        <div class="text-center mt-16">
-            <a href="index.html" class="inline-block bg-accent-red hover:bg-red-500 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md transition-colors">
-                Return to Home Analysis
-            </a>
-        </div>
 
-        <!-- Newsletter Subscription -->
-        <section class="bg-gray-900 p-8 rounded-xl shadow-lg my-16 text-center">
-            <h2 class="text-3xl font-bold text-gray-50 mb-2">Subscribe to The Flaw Report</h2>
-            <p class="text-gray-400 mb-6">Get weekly updates on new villain analyses and theme breakdowns straight to your inbox.</p>
-            <form action="newsletter.html" method="GET" class="flex flex-col sm:flex-row justify-center max-w-lg mx-auto space-y-4 sm:space-y-0 sm:space-x-4">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email address" 
-                    required 
-                    class="flex-grow p-3 bg-dark-card border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:ring-accent-red focus:border-accent-red transition-all"
-                >
-                <button 
-                    type="submit" 
-                    class="bg-accent-red text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-red-500 transition-colors w-full sm:w-auto"
-                >
-                    Subscribe
-                </button>
-            </form>
-        </section>
-        
     </main>
 
-    <!-- Footer with Social Media Icons -->
-    <footer class="bg-gray-900 py-10 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
-            
-            <div class="text-lg font-semibold tracking-tight mb-4 sm:mb-0">
-                &copy; 2025 Skelejar. All Rights Reserved.
-            </div>
-
-            <div class="flex space-x-6 text-2xl mb-4 sm:mb-0">
-                <a href="#tiktok" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#youtube" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#x-twitter" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)"><i class="fa-brands fa-square-x-twitter"></i></a>
-                <a href="#instagram" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <div class="text-sm">
-                Exposing the Single Flaw.
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark-card mt-12 pt-8 pb-4 border-t border-gray-800 text-center">
+        <div class="flex justify-center space-x-6 mb-6">
+            <a href="#" class="text-gray-400 hover:text-accent-red transition-colors text-2xl" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-accent-red transition-colors text-2xl" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-accent-red transition-colors text-2xl" aria-label="X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-accent-red transition-colors text-2xl" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="text-sm text-gray-500">
+            &copy; 2025 Skelejar. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT: Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+                    menuButton.setAttribute('aria-expanded', (!expanded).toString());
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    const icon = menuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
