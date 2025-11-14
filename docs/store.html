@@ -3,87 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - Skelejar</title>
+    <title>Store - Skelejar: Exposing the Single Flaw in Great Villains</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3HzqW3l/p1nSSQzWbB4kH6C1/A6U3J4sE2e3uH4M4t6XzU5wA0E7dF0Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
+        /* Global Font Import and Theme Colors */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
+            background-color: #0d1117; /* Required Dark Background */
         }
-        .text-accent-red { color: #f87171; }
-        .bg-dark-card { background-color: #161b22; }
-        .skelejar-logo {
-            width: 30px; 
-            height: 30px;
-            margin-right: 8px;
-            display: inline-block;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body class="min-h-screen text-gray-100 antialiased">
+        /* Custom colors and styles from requirements */
+        .text-accent-red { color: #f87171; } /* Required Accent Red */
+        .bg-dark-card { background-color: #161b22; } /* Card/Header/Footer Dark BG */
+        .text-hero-red { color: #f87171; } 
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
-        <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-end items-center h-16">
-            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-extrabold tracking-tight flex items-center">
-                <img 
-                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
-                    alt="Skelejar Logo" 
-                    class="skelejar-logo" 
-                    onerror="this.onerror=null;this.src='https://placehold.co/30x30/f87171/ffffff?text=Logo'"
-                >
-                <a href="index 2.html" class="text-gray-50 hover:text-accent-red transition-colors">Skelejar</a>
-            </div>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #161b22; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4f5864; }
+    </style>
+
+    <script>
+        // Set Tailwind configuration to allow custom classes
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-red': '#f87171',
+                        'dark-bg': '#0d1117',
+                        'dark-card': '#161b22',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-300 min-h-screen flex flex-col">
+
+    <!-- Header and Navigation -->
+    <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
             
-            <div class="flex items-center space-x-6">
-                <a href="index 2.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
-                <a href="submit_flaw.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Submit Flaw</a>
-                <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
-                <a href="store.html" class="text-accent-red font-medium">Store</a>
-                <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+                <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+                <span>SKELEJAR<span class="text-accent-red">.</span></span>
+            </a>
+
+            <div class="flex items-center ml-auto"> 
+                
+                <div class="hidden md:flex items-center space-x-6"> 
+                    <a href="index.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+                    <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+                    <a href="submit_flaws.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+                </div>
+
+                <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
+
+                <div class="flex items-center justify-end">
+                    <a href="store.html" class="text-accent-red font-medium transition duration-300">Store</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+    <main class="flex-grow">
         
-        <div class="bg-dark-card p-10 rounded-xl shadow-2xl border border-gray-700/50">
-            <h1 class="text-6xl font-black mb-4 text-accent-red tracking-tighter">
-                The Skelejar Store is Under Construction
-            </h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Soon, you'll be able to purchase posters, apparel, and merchandise featuring our iconic Flaw Categories. Keep your eyes peeled for updates!
-            </p>
-            <a href="index 2.html" class="inline-block bg-accent-red hover:bg-red-500 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md transition-colors">
-                Back to Home
-            </a>
-        </div>
-        
+        <!-- Store Coming Soon Section -->
+        <section class="py-24 bg-dark-bg">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="bg-dark-card p-10 rounded-xl shadow-2xl border-t-4 border-accent-red">
+                    <i class="fa-solid fa-store text-6xl text-accent-red mb-6"></i>
+                    <h1 class="text-5xl font-black mb-3 text-white tracking-tighter">
+                        Store Coming Soon!
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8">
+                        Get ready for Skelejar merchandise and gear. We'll have T-shirts, mugs, and more to expose the fatal flaws of your favorite villains.
+                    </p>
+                    <a href="index.html" class="inline-block bg-accent-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300">
+                        Back to Analysis
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="py-16 bg-dark-bg border-t border-gray-700">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-dark-card p-8 rounded-xl border border-gray-700 shadow-2xl">
+                <h2 class="text-3xl font-bold text-white mb-3">Join the Skelejar Archive</h2>
+                <p class="text-gray-400 mb-6">Receive analysis of villain flaws and subscribe for community updates.</p>
+                <form class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <input type="email" placeholder="Enter your email address" required
+                           class="flex-grow p-3 rounded-lg text-lg bg-dark-bg text-gray-300 border border-gray-700 focus:border-accent-red focus:ring focus:ring-accent-red/50">
+                    <button type="submit" class="px-6 py-3 rounded-lg font-bold text-white bg-accent-red hover:bg-red-700 transition duration-300 sm:w-auto">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
     </main>
-
-    <!-- Footer with Social Media Icons -->
-    <footer class="bg-gray-900 py-10 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
-            
-            <div class="text-lg font-semibold tracking-tight mb-4 sm:mb-0">
-                Skelejar: The Single Flaw
+    
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
+                SKELEJAR<span class="text-accent-red">.</span>
+            </a>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300" aria-label="X (Twitter)">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+                <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
-
-            <div class="flex space-x-6 text-2xl mb-4 sm:mb-0">
-                <a href="#tiktok" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#youtube" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#x-twitter" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)"><i class="fa-brands fa-square-x-twitter"></i></a>
-                <a href="#instagram" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <div class="text-sm">
-                &copy; 2025 Skelejar. All Rights Reserved.
+            <div class="border-t border-gray-700 pt-6 text-sm">
+                <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const linksWrapper = document.querySelector('header nav > .ml-auto');
+            
+            let menu;
+
+            const createMobileMenu = () => {
+                if (menu) menu.remove();
+                
+                menu = document.createElement('div');
+                menu.id = 'mobile-menu';
+                menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
+                
+                // Add Main Links
+                const mainLinksContainer = linksWrapper.querySelector('.hidden.md\\:flex.items-center.space-x-6');
+                if (mainLinksContainer) {
+                    mainLinksContainer.querySelectorAll('a').forEach(a => {
+                        const link = a.cloneNode(true);
+                        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+                        link.addEventListener('click', closeMenu);
+                        menu.appendChild(link);
+                    });
+                }
+                
+                // Add Store Link
+                const storeLinkElement = linksWrapper.querySelector('a[href="store.html"]');
+                if (storeLinkElement) {
+                    const storeLink = storeLinkElement.cloneNode(true);
+                    storeLink.className = 'block py-3 text-lg font-medium text-accent-red hover:text-accent-red transition border-t border-gray-700 mt-3 pt-3';
+                    storeLink.addEventListener('click', closeMenu);
+                    menu.appendChild(storeLink);
+                }
+
+                document.querySelector('header').appendChild(menu);
+            };
+
+            const openMenu = () => {
+                if (!menu) createMobileMenu(); 
+                menu.style.opacity = '1';
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+                btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
+            };
+
+            const closeMenu = () => {
+                if (menu) {
+                    menu.style.opacity = '0';
+                    menu.style.maxHeight = '0';
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                }
+            };
+
+            if (linksWrapper) {
+                createMobileMenu();
+                btn.addEventListener('click', () => {
+                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                    isOpen ? closeMenu() : openMenu();
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!btn.contains(e.target) && menu && !menu.contains(e.target)) {
+                    if (btn.getAttribute('aria-expanded') === 'true') closeMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
