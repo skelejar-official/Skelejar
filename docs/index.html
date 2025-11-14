@@ -1,5 +1,4 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,32 +47,30 @@
 
     <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-            
-            <a href="#" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
-                <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
-                <span>SKELEJAR<span class="text-accent-red">.</span></span>
-            </a>
+  <a href="#" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+    <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+    <span>SKELEJAR<span class="text-accent-red">.</span></span>
+  </a>
 
-            <div class="flex items-center ml-auto"> 
-                
-                <div class="hidden md:flex items-center space-x-6"> 
-                    <a href="#hero" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
-                    <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
-                    <a href="submit_flaws.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
-                </div>
+  <div class="flex items-center ml-auto">
+    <div class="flex items-center space-x-6">
+      <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+      <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+      <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+      <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+    </div>
 
-                <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
+    <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
 
-                <div class="flex items-center justify-end">
-                    <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
-                </div>
+    <div class="flex items-center justify-end">
+      <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+    </div>
 
-                <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
+    <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
     </header>
     <main class="flex-grow">
         
@@ -250,7 +247,8 @@
             </div>
         </div>
     </footer>
-<script>
+
+  <script>
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('mobile-menu-btn');
   const linksWrapper = document.querySelector('header nav > .ml-auto');
@@ -263,25 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.id = 'mobile-menu';
     menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
 
-    // Clone main nav links
-    const mainLinksContainer = linksWrapper.querySelector('.hidden.md\\:flex.items-center.space-x-6');
-    if (mainLinksContainer) {
-      mainLinksContainer.querySelectorAll('a').forEach(a => {
-        const link = a.cloneNode(true);
-        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
-        link.addEventListener('click', closeMenu);
-        menu.appendChild(link);
-      });
-    }
-
-    // Clone store link
-    const storeLinkElement = linksWrapper.querySelector('a[href="store.html"]');
-    if (storeLinkElement) {
-      const storeLink = storeLinkElement.cloneNode(true);
-      storeLink.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition border-t border-gray-700 mt-3 pt-3';
-      storeLink.addEventListener('click', closeMenu);
-      menu.appendChild(storeLink);
-    }
+    // Clone all visible links
+    linksWrapper.querySelectorAll('a').forEach(a => {
+      const link = a.cloneNode(true);
+      link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+      link.addEventListener('click', closeMenu);
+      menu.appendChild(link);
+    });
 
     document.querySelector('header').appendChild(menu);
   };
@@ -315,5 +301,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
-
