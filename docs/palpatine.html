@@ -81,32 +81,33 @@
 <body class="text-gray-300 min-h-screen flex flex-col">
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-      <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition">
-        <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png"
-             class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
-        <span>SKELEJAR<span class="text-accent-red">.</span></span>
-      </a>
+ <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+    <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+      <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <span>SKELEJAR<span class="text-accent-red">.</span></span>
+    </a>
 
-      <div class="hidden md:flex items-center space-x-6 ml-auto">
-        <a href="index.html" class="text-gray-300 hover:text-accent-red font-medium transition">Home</a>
-        <a href="about.html" class="text-gray-300 hover:text-accent-red font-medium transition">About</a>
-        <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red font-medium transition">Flaw Themes</a>
-        <a href="submit_flaws.html" class="text-gray-300 hover:text-accent-red font-medium transition">Submit Flaw</a>
+    <div class="flex items-center ml-auto">
+      <div class="flex items-center space-x-6">
+        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+        <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
       </div>
 
       <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
-      <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition hidden md:block">Store</a>
 
-      <button id="mobile-menu-btn"
-              class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none"
-              aria-label="Open menu" aria-expanded="false">
+      <div class="flex items-center justify-end">
+        <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
         <i class="fas fa-bars text-xl"></i>
       </button>
-    </nav>
-  </header>
-
+    </div>
+  </nav>
+</header>
   <main class="flex-grow">
 
     <!-- HERO -->
@@ -205,82 +206,73 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-dark-card border-t border-gray-700 py-10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition inline-block mb-4">
-        SKELEJAR<span class="text-accent-red">.</span>
-      </a>
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="#" class="text-gray-400 hover:text-accent-red text-2xl"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="text-gray-400 hover:text-accent-red text-2xl"><i class="fab fa-youtube"></i></a>
-        <a href="#" class="text-gray-400 hover:text-accent-red text-2xl"><i class="fa-brands fa-square-x-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-accent-red text-2xl"><i class="fab fa-instagram"></i></a>
-      </div>
-      <p class="text-gray-500 text-sm">© 2025 Skelejar. All Rights Reserved.</p>
+ <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
+      SKELEJAR<span class="text-accent-red">.</span>
+    </a>
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- Social icons -->
+      <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
     </div>
-  </footer>
-
+    <div class="border-t border-gray-700 pt-6 text-sm">
+      <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
   <!-- MOBILE MENU SCRIPT (100% Working) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('mobile-menu-btn');
-      const nav = document.querySelector('header nav');
-      let menu = null;
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const linksWrapper = document.querySelector('header nav > .ml-auto');
+    let menu;
 
-      const createMenu = () => {
-        if (menu) menu.remove();
-        menu = document.createElement('div');
-        menu.id = 'mobile-menu';
-        menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 opacity-0 max-h-0 overflow-hidden';
+    const createMobileMenu = () => {
+      if (menu) return;
+      menu = document.createElement('div');
+      menu.id = 'mobile-menu';
+      menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
 
-        document.querySelectorAll('header nav .hidden.md\\:flex a').forEach(a => {
-          const link = a.cloneNode(true);
-          link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
-          link.addEventListener('click', closeMenu);
-          menu.appendChild(link);
-        });
+      linksWrapper.querySelectorAll('a').forEach(a => {
+        const link = a.cloneNode(true);
+        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+        link.addEventListener('click', closeMenu);
+        menu.appendChild(link);
+      });
 
-        const store = document.querySelector('header nav a[href="store.html"]');
-        if (store) {
-          const s = store.cloneNode(true);
-          s.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition border-t border-gray-700 mt-3 pt-3';
-          s.addEventListener('click', closeMenu);
-          menu.appendChild(s);
-        }
+      document.querySelector('header').appendChild(menu);
+    };
 
-        nav.appendChild(menu);
-      };
+    const openMenu = () => {
+      createMobileMenu();
+      menu.style.opacity = '1';
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
+      document.body.classList.add('overflow-hidden');
+    };
 
-      const openMenu = () => {
-        if (!menu) createMenu();
-        menu.style.opacity = '1';
-        menu.style.maxHeight = menu.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded', 'true');
-        btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
-      };
+    const closeMenu = () => {
+      if (menu) {
+        menu.style.opacity = '0';
+        menu.style.maxHeight = '0';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+        document.body.classList.remove('overflow-hidden');
+      }
+    };
 
-      const closeMenu = () => {
-        if (menu) {
-          menu.style.opacity = '0';
-          menu.style.maxHeight = '0';
-          btn.setAttribute('aria-expanded', 'false');
-          btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-        }
-      };
-
+    if (btn && linksWrapper) {
       btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        open ? closeMenu() : openMenu();
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
       });
-
-      document.addEventListener('click', e => {
-        if (!btn.contains(e.target) && menu && !menu.contains(e.target)) {
-          if (btn.getAttribute('aria-expanded') === 'true') closeMenu();
-        }
-      });
-
-      createMenu();
-    });
-  </script>
+    }
+  });
+</script>
 </body>
 </html>
