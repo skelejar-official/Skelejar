@@ -31,37 +31,33 @@
 <body class="min-h-screen text-gray-100 antialiased">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-10 bg-dark-card shadow-lg">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 h-16 header-grid">
-            
-            <!-- Left-aligned links -->
-            <div class="flex items-center space-x-6 justify-self-start">
-                <!-- Placeholder for balance -->
-            </div>
+    <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+    <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+      <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <span>SKELEJAR<span class="text-accent-red">.</span></span>
+    </a>
 
-            <!-- Center Logo and Title -->
-            <div class="text-2xl font-extrabold tracking-tight flex items-center justify-center">
-                <img 
-                    src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" 
-                    alt="Skelejar Logo" 
-                    class="skelejar-logo" 
-                    onerror="this.onerror=null;this.src='https://placehold.co/30x30/f87171/ffffff?text=SJ'"
-                >
-                <a href="index.html" class="text-gray-50 hover:text-accent-red transition-colors">Skelejar</a>
-            </div>
-            
-            <!-- Center-Right Navigation Links -->
-            <div class="flex items-center space-x-6 justify-self-end">
-                <a href="index.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Home</a>
-                <a href="about.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">About</a>
-                <a href="submit_flaw.html" class="text-accent-red font-medium">Submit Flaw</a>
-                <a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Flaw Themes</a>
-                <a href="store.html" class="text-gray-300 hover:text-accent-red transition-colors font-medium">Store</a>
-                <a href="#" class="hidden text-gray-300 hover:text-accent-red transition-colors font-medium">History</a> 
-            </div>
-        </nav>
-    </header>
+    <div class="flex items-center ml-auto">
+      <div class="flex items-center space-x-6">
+        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+        <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+      </div>
 
+      <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
+
+      <div class="flex items-center justify-end">
+        <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </nav>
+</header>
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         
         <div class="bg-dark-card p-10 rounded-xl shadow-2xl border-t-4 border-accent-red">
@@ -137,24 +133,23 @@
     </main>
 
     <!-- Footer with Social Media Icons -->
-    <footer class="bg-gray-900 py-10 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-gray-500">
-            
-            <div class="text-lg font-semibold tracking-tight mb-4 sm:mb-0">
-                &copy; 2025 Skelejar. All Rights Reserved.
-            </div>
-
-            <div class="flex space-x-6 text-2xl mb-4 sm:mb-0">
-                <a href="#tiktok" class="hover:text-accent-red transition-colors duration-200" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#youtube" class="hover:text-accent-red transition-colors duration-200" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#x-twitter" class="hover:text-accent-red transition-colors duration-200" aria-label="X (formerly Twitter)"><i class="fa-brands fa-square-x-twitter"></i></a>
-                <a href="#instagram" class="hover:text-accent-red transition-colors duration-200" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <div class="text-sm">
-                Exposing the Single Flaw.
-            </div>
-        </div>
-    </footer>
+    <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
+      SKELEJAR<span class="text-accent-red">.</span>
+    </a>
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- Social icons -->
+      <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="border-t border-gray-700 pt-6 text-sm">
+      <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
