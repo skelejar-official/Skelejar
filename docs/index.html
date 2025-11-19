@@ -45,33 +45,27 @@
 </head>
 <body class="text-gray-300 min-h-screen flex flex-col">
 
-    <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-  <a href="#" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
-    <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
-    <span>SKELEJAR<span class="text-accent-red">.</span></span>
-  </a>
-
-  <div class="flex items-center ml-auto">
-    <div class="flex items-center space-x-6">
-      <a href="index.html#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
-      <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
-      <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
-      <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
-    </div>
-
-    <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
-
-    <div class="flex items-center justify-end">
-      <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
-    </div>
-
-    <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
-      <i class="fas fa-bars text-xl"></i>
-    </button>
-  </div>
+<header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+<a href="#" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+<img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/docs/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+<span>SKELEJAR<span class="text-accent-red">.</span></span>
+</a>
+<div class="flex items-center ml-auto">
+<div id="desktop-links" class="hidden md:flex items-center space-x-6">
+<a href="index.html#hero" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+<a href="about.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+<a href="flaw_themes.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+<a href="submit_flaws.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+<span class="mx-4 h-6 w-px bg-gray-700"></span>
+<a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+</div>
+<button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
 </nav>
-    </header>
+</header>
     <main class="flex-grow">
         
         <section id="hero" class="py-12 md:py-20 text-center bg-dark-bg">
@@ -248,55 +242,48 @@
         </div>
     </footer>
 
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('mobile-menu-btn');
-  const linksWrapper = document.querySelector('header nav > .ml-auto');
-  let menu;
-
-  const createMobileMenu = () => {
-    if (menu) return;
-
-    menu = document.createElement('div');
-    menu.id = 'mobile-menu';
-    menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
-
-    // Clone all visible links
-    linksWrapper.querySelectorAll('a').forEach(a => {
-      const link = a.cloneNode(true);
-      link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
-      link.addEventListener('click', closeMenu);
-      menu.appendChild(link);
-    });
-
-    document.querySelector('header').appendChild(menu);
-  };
-
-  const openMenu = () => {
-    createMobileMenu();
-    menu.style.opacity = '1';
-    menu.style.maxHeight = menu.scrollHeight + 'px';
-    btn.setAttribute('aria-expanded', 'true');
-    btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
-    document.body.classList.add('overflow-hidden');
-  };
-
-  const closeMenu = () => {
-    if (menu) {
-      menu.style.opacity = '0';
-      menu.style.maxHeight = '0';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-      document.body.classList.remove('overflow-hidden');
-    }
-  };
-
-  if (btn && linksWrapper) {
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      isOpen ? closeMenu() : openMenu();
-    });
-  }
+const btn = document.getElementById('mobile-menu-btn');
+const linksWrapper = document.getElementById('desktop-links'); // CHANGED
+let menu;
+const createMobileMenu = () => {
+if (menu) return;
+menu = document.createElement('div');
+menu.id = 'mobile-menu';
+menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
+// Clone all visible links
+linksWrapper.querySelectorAll('a').forEach(a => {
+const link = a.cloneNode(true);
+link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+link.addEventListener('click', closeMenu);
+menu.appendChild(link);
+});
+document.querySelector('header').appendChild(menu);
+};
+const openMenu = () => {
+createMobileMenu();
+menu.style.opacity = '1';
+menu.style.maxHeight = menu.scrollHeight + 'px';
+btn.setAttribute('aria-expanded', 'true');
+btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
+document.body.classList.add('overflow-hidden');
+};
+const closeMenu = () => {
+if (menu) {
+menu.style.opacity = '0';
+menu.style.maxHeight = '0';
+btn.setAttribute('aria-expanded', 'false');
+btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+document.body.classList.remove('overflow-hidden');
+}
+};
+if (btn && linksWrapper) {
+btn.addEventListener('click', () => {
+const isOpen = btn.getAttribute('aria-expanded') === 'true';
+isOpen ? closeMenu() : openMenu();
+});
+}
 });
 </script>
 <!-- Firebase SDKs -->
@@ -354,3 +341,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
