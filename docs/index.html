@@ -208,9 +208,9 @@
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-dark-card p-8 rounded-xl border border-gray-700 shadow-2xl">
                 <h2 class="text-3xl font-bold text-white mb-3">Join the Skelejar Archive</h2>
                 <p class="text-gray-400 mb-6">Receive analysis of villain flaws and subscribe for community updates.</p>
-                <form class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <input type="email" placeholder="Enter your email address" required
-                           class="flex-grow p-3 rounded-lg text-lg bg-dark-bg text-gray-300 border border-gray-700 focus:border-accent-red focus:ring focus:ring-accent-red/50">
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <input type="email" id="email-input" placeholder="Enter your email address" required
+                        class="flex-grow p-3 rounded-lg text-lg bg-dark-bg text-gray-300 border border-gray-700 focus:border-accent-red focus:ring focus:ring-accent-red/50">
                     <button type="submit" class="px-6 py-3 rounded-lg font-bold text-white bg-accent-red hover:bg-red-700 transition duration-300 sm:w-auto">
                         Subscribe
                     </button>
@@ -298,6 +298,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+</script>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCPwl8E7peUlKLaNMMKa8tkJAftYrubiHE",
+    authDomain: "skelejar-newsletter.firebaseapp.com",
+    projectId: "skelejar-newsletter",
+    storageBucket: "skelejar-newsletter.firebasestorage.app",
+    messagingSenderId: "748268050646",
+    appId: "1:748268050646:web:c3e55d88caebf6db485177",
+    measurementId: "G-Z78D15CSQD"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email-input').value.trim();
+
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    try {
+  await addDoc(collection(db, 'artifacts'), {
+    type: 'newsletter',
+    email,
+    timestamp: new Date()
+  });
+
+  // Try redirecting
+  window.location.href = 'newsletter.html';
+
+  // Fallback: if redirect doesn't happen in 2 seconds, show message
+  setTimeout(() => {
+    alert("Thanks for subscribing! If you weren't redirected, you can click here: newsletter.html");
+  }, 2000);
+
+} catch (error) {
+  console.error('Error saving email:', error);
+  alert('Something went wrong. Please try again.');
+}
+  });
 </script>
 </body>
 </html>
