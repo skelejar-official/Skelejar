@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emperor Palpatine: The Single Flaw - Skelejar</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Emperor Palpatine (Star Wars) orchestrated the fall of the Republic — but his fatal flaw was underestimating the power of redemption. One son, one lightning bolt, one fatal misjudgment." />
+  <meta name="keywords" content="Emperor Palpatine, Darth Sidious, Star Wars, Return of the Jedi, Anakin Skywalker, Luke, Skelejar, villain flaw, hubris" />
+  <meta name="author" content="Skelejar" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emperor Palpatine: The Single Flaw - Skelejar" />
+  <meta property="og:description" content="He turned Anakin to the dark side — but couldn't stop him from turning back." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/palpatine-og.jpg" />
+  <meta property="og:url" content="https://skelejar.com/palpatine.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Skelejar" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emperor Palpatine: The Single Flaw - Skelejar" />
+  <meta name="twitter:description" content="He turned Anakin to the dark side — but couldn't stop him from turning back." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/palpatine-og.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Emperor Palpatine: The Single Flaw",
+    "alternativeHeadline": "How Absolute Power Was Undone by Love",
+    "author": { "@type": "Organization", "name": "Skelejar" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Skelejar",
+      "logo": { "@type": "ImageObject", "url": "https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/logo.png" }
+    },
+    "datePublished": "2025-04-05",
+    "dateModified": "2025-04-05",
+    "image": "https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/palpatine-og.jpg",
+    "description": "Palpatine's fatal flaw was his belief that the dark side erases all light. He forgot: redemption is stronger than any Sith lightning.",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://skelejar.com/palpatine.html" },
+    "articleSection": "Hubris",
+    "keywords": ["Palpatine", "Darth Sidious", "Star Wars", "Anakin", "Luke", "Sith", "Skelejar"]
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body { font-family: 'Inter', sans-serif; background:#0d1117; }
+    .text-accent-red { color:#f87171; }
+    .bg-dark-card { background:#161b22; }
+    ::-webkit-scrollbar { width:8px; }
+    ::-webkit-scrollbar-track { background:#161b22; }
+    ::-webkit-scrollbar-thumb { background:#30363d; border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover { background:#4f5864; }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { 'accent-red':'#f87171','dark-bg':'#0d1117','dark-card':'#161b22' } } }
+    };
+  </script>
+</head>
+
+<body class="text-gray-300 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+ <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+    <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+      <img src="/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <span>SKELEJAR<span class="text-accent-red">.</span></span>
+    </a>
+
+    <div class="flex items-center ml-auto">
+      <div class="flex items-center space-x-6">
+        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+        <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+      </div>
+
+      <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
+
+      <div class="flex items-center justify-end">
+        <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+  <main class="flex-grow">
+
+    <!-- HERO -->
+    <section class="relative py-24 md:py-32 bg-dark-bg overflow-hidden">
+      <div class="absolute inset-0 opacity-30">
+        <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/palpatine-bg.jpg"
+             alt="Emperor Palpatine on throne" class="w-full h-full object-cover object-center"
+             onerror="this.src='https://placehold.co/1920x1080/161b22/4b5565?text=SITH'">
+      </div>
+      <div class="relative max-w-5xl mx-auto px-4 text-center z-10">
+        <i class="fas fa-bolt text-6xl md:text-8xl text-red-700 mb-6 drop-shadow-2xl"></i>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-2xl">Emperor Palpatine</h1>
+        <p class="text-2xl md:text-3xl text-gray-300 mb-2 drop-shadow-lg">Star Wars: Return of the Jedi (1983)</p>
+        <span class="inline-block px-4 py-1 bg-dark-bg/80 rounded-full text-sm font-semibold text-gray-400 border border-gray-700">
+          Flaw Type: <span class="text-red-700">Hubris</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- SINGLE FLAW -->
+    <section class="py-16 bg-dark-bg border-t border-gray-700">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="bg-dark-card p-8 md:p-12 rounded-xl shadow-2xl border-l-4 border-red-700">
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-6">The Single Flaw</h2>
+          <p class="text-xl md:text-2xl text-gray-300 italic leading-relaxed">
+            "His flaw was his <strong>certainty in the dark side's supremacy</strong>. He believed Anakin's fall was permanent — and that no one could return from the abyss. One father's love proved him wrong."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL ANALYSIS -->
+    <section class="py-16 bg-dark-bg">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-dark-card p-8 md:p-10 rounded-xl shadow-2xl">
+          <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
+            <i class="fas fa-scroll text-accent-red mr-3"></i> Full Analysis
+          </h2>
+          <div class="prose prose-invert prose-lg max-w-none space-y-4 text-gray-300">
+            <p>
+              Emperor Palpatine didn't just rule the galaxy — he <strong>engineered its fall</strong>. From Senator to Sith Lord to Emperor, every move was calculated decades in advance. He turned the Republic into an Empire, the Jedi into fugitives, and Anakin Skywalker into Darth Vader.
+            </p>
+
+            <h3 class="text-2xl font-bold text-red-700 mt-8 mb-4">The Perfect Apprentice</h3>
+            <p>
+              Palpatine saw Vader not as a man, but as a <strong>weapon</strong>. He broke Anakin's spirit, exploited his fear of loss, and bound him with hate. For 23 years, Vader was the perfect enforcer — until Luke Skywalker appeared.
+            </p>
+
+            <h3 class="text-2xl font-bold text-red-700 mt-8 mb-4">The Death Star Trap</h3>
+            <p>
+              On the second Death Star, Palpatine orchestrated the ultimate confrontation. He <strong>revealed himself to Luke</strong>, goaded him into anger, and watched Vader fight his son. He believed the dark side would claim another Skywalker.
+            </p>
+
+            <h3 class="text-2xl font-bold text-red-700 mt-8 mb-4">The Miscalculation</h3>
+            <p>
+              But Luke refused to kill. He threw down his saber and declared: <em>"I am a Jedi, like my father before me."</em> This act of defiance — of <strong>hope over hate</strong> — cracked Vader's armor. For the first time in decades, Anakin heard his son.
+            </p>
+
+            <h3 class="text-2xl font-bold text-red-700 mt-8 mb-4">The Final Lightning</h3>
+            <p>
+              As Palpatine tortured Luke with Force lightning, Vader made his choice. In one motion, he <strong>lifted the Emperor and threw him down the reactor shaft</strong>. The dark side's greatest master was destroyed not by a Jedi — but by the very apprentice he thought he'd broken forever.
+            </p>
+
+            <div class="bg-dark-bg/50 p-6 rounded-lg border border-gray-700 mt-8">
+              <p class="text-lg font-semibold text-white mb-2">The Final Irony:</p>
+              <p class="italic">
+                "The Sith who believed fear and hate were absolute was killed by the one power he dismissed: <strong>love</strong>."
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10 text-center">
+            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-accent-red hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition">
+              <i class="fas fa-arrow-left mr-2"></i> Back to All Analyses
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="py-16 bg-dark-bg border-t border-gray-700">
+      <div class="max-w-3xl mx-auto px-4 text-center bg-dark-card p-8 rounded-xl border border-gray-700 shadow-2xl">
+        <h2 class="text-3xl font-bold text-white mb-3">Join the Skelejar Archive</h2>
+        <p class="text-gray-400 mb-6">Receive analysis of villain flaws and subscribe for community updates.</p>
+        <form class="flex flex-col sm:flex-row gap-3 justify-center">
+          <input type="email" placeholder="Enter your email address" required
+                 class="flex-grow p-3 rounded-lg bg-dark-bg text-gray-300 border border-gray-700 focus:border-accent-red focus:ring focus:ring-accent-red/50">
+          <button type="submit" class="px-6 py-3 rounded-lg font-bold text-white bg-accent-red hover:bg-red-700 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+ <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
+      SKELEJAR<span class="text-accent-red">.</span>
+    </a>
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- Social icons -->
+      <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="border-t border-gray-700 pt-6 text-sm">
+      <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+  <!-- MOBILE MENU SCRIPT (100% Working) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const linksWrapper = document.querySelector('header nav > .ml-auto');
+    let menu;
+
+    const createMobileMenu = () => {
+      if (menu) return;
+      menu = document.createElement('div');
+      menu.id = 'mobile-menu';
+      menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
+
+      linksWrapper.querySelectorAll('a').forEach(a => {
+        const link = a.cloneNode(true);
+        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+        link.addEventListener('click', closeMenu);
+        menu.appendChild(link);
+      });
+
+      document.querySelector('header').appendChild(menu);
+    };
+
+    const openMenu = () => {
+      createMobileMenu();
+      menu.style.opacity = '1';
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeMenu = () => {
+      if (menu) {
+        menu.style.opacity = '0';
+        menu.style.maxHeight = '0';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+        document.body.classList.remove('overflow-hidden');
+      }
+    };
+
+    if (btn && linksWrapper) {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+    }
+  });
+</script>
+</body>
+</html>

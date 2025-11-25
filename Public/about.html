@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skelejar: About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Global Font Import and Theme Colors */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Required Dark Background */
+        }
+        /* Custom colors and styles from requirements */
+        .text-accent-red { color: #f87171; } /* Required Accent Red */
+        .bg-dark-card { background-color: #161b22; } /* Card/Header/Footer Dark BG */
+        .text-hero-red { color: #f87171; } 
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #161b22; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4f5864; }
+    </style>
+
+    <script>
+        // Set Tailwind configuration to allow custom classes
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-red': '#f87171',
+                        'dark-bg': '#0d1117',
+                        'dark-card': '#161b22',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-300 min-h-screen flex flex-col">
+
+    <<header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+    <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
+      <img src="https://raw.githubusercontent.com/skelejar-official/Skelejar/main/public/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <span>SKELEJAR<span class="text-accent-red">.</span></span>
+    </a>
+
+    <div class="flex items-center ml-auto">
+      <div class="flex items-center space-x-6">
+        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
+        <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
+        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+      </div>
+
+      <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
+
+      <div class="flex items-center justify-end">
+        <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+    <main class="flex-grow bg-dark-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+            <header class="text-center mb-12">
+                <h1 class="text-5xl font-black mb-3 text-white tracking-tighter">
+                    Our Mission: <span class="text-accent-red">The Single Flaw</span>
+                </h1>
+                <p class="text-xl text-gray-400">Why even the greatest evil collapses under the weight of one simple mistake.</p>
+            </header>
+
+            <section class="space-y-8 text-lg">
+                <p class="text-gray-300">
+                    <strong>Skelejar</strong> is dedicated to the forensic analysis of antagonist failure. We believe that behind every spectacular downfall—from intergalactic empires to local bank heists—lies a single, core, identifiable <span class="text-accent-red font-semibold">Flaw</span>. 
+                    This flaw is not merely a tactical error or a misplaced confidence; it’s a philosophical weakness — a truth so deeply buried in the villain’s nature that it guarantees their undoing.
+                </p>
+
+                <p class="text-gray-300 border-l-4 border-accent-red pl-4 italic">
+                    We classify the collapse of greatness into three main thematic categories: <strong>Hubris</strong>, <strong>Emotional</strong>, and <strong>Pragmatism</strong>. By dissecting these failures, we explore the anatomy of ambition, the psychology of downfall, and the universal inevitability of imperfection.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-12">
+                    <div class="bg-dark-card p-6 rounded-xl border border-gray-700 shadow-lg hover:shadow-accent-red/20 transition duration-300">
+                        <i class="fas fa-crown text-4xl text-accent-red mb-3"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Hubris</h3>
+                        <p class="text-gray-400 text-sm">
+                            The arrogance that blinds the powerful. Hubris convinces villains that fate bends to their will, that they are exceptions to consequence. Every empire built on self-worship is doomed to implode.
+                        </p>
+                    </div>
+                    <div class="bg-dark-card p-6 rounded-xl border border-gray-700 shadow-lg hover:shadow-accent-red/20 transition duration-300">
+                        <i class="fas fa-heart-broken text-4xl text-accent-red mb-3"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Emotional</h3>
+                        <p class="text-gray-400 text-sm">
+                            The flaw born from feeling — jealousy, obsession, vengeance, or love twisted into delusion. The emotional villain doesn’t lose because they’re weak, but because they feel too deeply to stay rational.
+                        </p>
+                    </div>
+                    <div class="bg-dark-card p-6 rounded-xl border border-gray-700 shadow-lg hover:shadow-accent-red/20 transition duration-300">
+                        <i class="fas fa-chess text-4xl text-accent-red mb-3"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Pragmatism</h3>
+                        <p class="text-gray-400 text-sm">
+                            The cold logic that corrodes itself. Pragmatic villains plan perfectly — until the human element breaks the equation. Their flaw lies in believing systems are flawless when people are not.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card p-8 rounded-xl border-l-4 border-accent-red mt-12 shadow-xl">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Our Method</h2>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li><strong>Identification:</strong> Pinpointing the one defining moment or characteristic that sealed the villain’s fate.</li>
+                        <li><strong>Classification:</strong> Assigning the flaw to one of the three Skelejar archetypes.</li>
+                        <li><strong>Dissection:</strong> Providing detailed analysis, cinematic evidence, and theoretical reasoning behind the collapse.</li>
+                    </ul>
+                </div>
+
+                <p class="text-gray-300 mt-10">
+                    Our database is constantly growing, featuring in-depth dissections of villains from film, literature, and television. 
+                    Join our investigation by submitting your own flaw analysis and help us expand the archive of villainous failure — 
+                    because even the greatest evil is only as strong as its single flaw.
+                </p>
+            </section>
+
+            <section class="bg-dark-card p-10 rounded-xl shadow-lg my-16 text-center border border-gray-700">
+                <h2 class="text-3xl font-bold text-white mb-2">Join the Skelejar Archive</h2>
+                <p class="text-gray-400 mb-6">Get updates on new flaw analyses and behind-the-scenes theories from the Skelejar vault.</p>
+                <form action="newsletter.html" method="GET" class="flex flex-col sm:flex-row justify-center max-w-lg mx-auto space-y-4 sm:space-y-0 sm:space-x-4">
+                    <input type="email" placeholder="Enter your email address" required class="flex-grow p-3 bg-dark-bg border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:ring-accent-red focus:border-accent-red transition-all">
+                    <button type="submit" class="bg-accent-red text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-colors w-full sm:w-auto">
+                        Subscribe
+                    </button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
+      SKELEJAR<span class="text-accent-red">.</span>
+    </a>
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- Social icons -->
+      <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="border-t border-gray-700 pt-6 text-sm">
+      <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const linksWrapper = document.querySelector('header nav > .ml-auto');
+    let menu;
+
+    const createMobileMenu = () => {
+      if (menu) return;
+      menu = document.createElement('div');
+      menu.id = 'mobile-menu';
+      menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
+
+      linksWrapper.querySelectorAll('a').forEach(a => {
+        const link = a.cloneNode(true);
+        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
+        link.addEventListener('click', closeMenu);
+        menu.appendChild(link);
+      });
+
+      document.querySelector('header').appendChild(menu);
+    };
+
+    const openMenu = () => {
+      createMobileMenu();
+      menu.style.opacity = '1';
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeMenu = () => {
+      if (menu) {
+        menu.style.opacity = '0';
+        menu.style.maxHeight = '0';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+        document.body.classList.remove('overflow-hidden');
+      }
+    };
+
+    if (btn && linksWrapper) {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+    }
+  });
+</script>
+</body>
+</html>
