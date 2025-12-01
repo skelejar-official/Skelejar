@@ -39,17 +39,7 @@
   }
   </script>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-    body { font-family: 'Inter', sans-serif; background:#0d1117; }
-    .text-accent-red { color:#f87171; }
-    .bg-dark-card { background:#161b22; }
-    ::-webkit-scrollbar { width:8px; }
-    ::-webkit-scrollbar-track { background:#161b22; }
-    ::-webkit-scrollbar-thumb { background:#30363d; border-radius:4px; }
-    ::-webkit-scrollbar-thumb:hover { background:#4f5864; }
-  </style>
-
+  <link rel="stylesheet" href="style.css">
   <script>
     tailwind.config = {
       theme: { extend: { colors: { 'accent-red':'#f87171','dark-bg':'#0d1117','dark-card':'#161b22' } } }
@@ -63,16 +53,16 @@
   <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
     <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
-      <img src="/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <img src="logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
       <span>SKELEJAR<span class="text-accent-red">.</span></span>
     </a>
 
     <div class="flex items-center ml-auto">
       <div class="flex items-center space-x-6">
-        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="index.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
         <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
         <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
-        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+        <a href="submit_flaw.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
       </div>
 
       <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
@@ -91,22 +81,21 @@
   <!-- ======== MAIN CONTENT (same as before) ======== -->
   <main class="flex-grow">
     <!-- HERO -->
-    <section class="relative py-24 md:py-32 bg-dark-bg overflow-hidden">
-      <div class="absolute inset-0 opacity-30">
-        <img src="/payne-speed-bg.jpg"
-             alt="Howard Payne" class="w-full h-full object-cover"
-             onerror="this.src='https://placehold.co/1920x1080/161b22/4b5565?text=PAYNE'">
-      </div>
-      <div class="relative max-w-5xl mx-auto px-4 text-center z-10">
-        <i class="fas fa-bomb text-6xl md:text-8xl text-yellow-500 mb-6 drop-shadow-2xl"></i>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-2xl">Howard Payne</h1>
-        <p class="text-2xl md:text-3xl text-gray-300 mb-2 drop-shadow-lg">Speed (1994)</p>
-        <span class="inline-block px-4 py-1 bg-dark-bg/80 rounded-full text-sm font-semibold text-gray-400 border border-gray-700">
-          Flaw Type: <span class="text-yellow-500">Pragmatism</span>
-        </span>
-      </div>
-    </section>
-
+    <section class="responsive-banner relative flex items-center justify-center overflow-hidden bg-dark-bg">
+  <img src="payne-banner.jpg"          
+       alt="Howard Payne"                
+       class="h-full w-auto object-contain"
+       onerror="this.src='https://placehold.co/1920x1080/161b22/4b5565?text=PAYNE'">
+       
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 w-full z-10 bg-black/30"> 
+    <i class="fas fa-bomb text-6xl md:text-8xl text-yellow-500 mb-6 drop-shadow-2xl"></i>
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-2xl">Howard Payne</h1>
+    <p class="text-2xl md:text-3xl text-gray-300 mb-2 drop-shadow-lg">Speed (1994)</p>
+    <span class="inline-block px-4 py-1 bg-dark-bg/80 rounded-full text-sm font-semibold text-gray-400 border border-gray-700">
+      Flaw Type: <span class="text-yellow-500">Pragmatism</span>
+    </span>
+  </div>
+</section>
     <!-- SINGLE FLAW -->
     <section class="py-16 bg-dark-bg border-t border-gray-700">
       <div class="max-w-4xl mx-auto px-4 text-center">
@@ -118,24 +107,60 @@
         </div>
       </div>
     </section>
-
     <!-- FULL ANALYSIS (shortened for demo) -->
     <section class="py-16 bg-dark-bg">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="bg-dark-card p-8 md:p-10 rounded-xl shadow-2xl">
-          <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-            <i class="fas fa-scroll text-accent-red mr-3"></i> Full Analysis
-          </h2>
-          <p class="text-gray-300">Payne’s plan was brilliant — until greed made him step onto the subway car. <em>One extra bomb, one fatal mistake.</em></p>
-          <div class="mt-10 text-center">
-            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-accent-red hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition">
-              <i class="fas fa-arrow-left mr-2"></i> Back to All Analyses
-            </a>
-          </div>
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-dark-card p-8 md:p-10 rounded-xl shadow-2xl">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
+        <i class="fas fa-scroll text-accent-red mr-3"></i> Full Analysis
+      </h2>
+      <div class="prose prose-invert prose-lg max-w-none space-y-4 text-gray-300">
+        <p>
+            Howard Payne, a disgruntled former Atlanta PD bomb expert, embodied a chilling form of **pragmatism** fueled by a deep-seated grievance against the system that denied him his pension. His entire scheme, from the elevator bomb to the finale on the subway, was meticulously engineered not out of chaos, but out of a precise, technical need for financial compensation he felt he was owed.
+        </p>
+        <p>
+            His flaw wasn't an inherent desire for destruction, but an obsessive commitment to a plan that required **total control** and zero deviation. He was a master clock-maker who forgot that living humans—especially heroes—do not follow predictable timetables.
+        </p>
+
+        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Illusion of Total Control</h3>
+        <p>
+            Payne’s genius was his technical control. He designed the bomb mechanisms, timed the drops, monitored the bus via police scanners, and manipulated the heroes (Jack Traven and Harry Temple) like pieces on a chessboard. He successfully controlled the elevator, the bus's speed, the media circus, and the exchange location.
+        </p>
+        <p>
+            However, the moment the unpredictable element of human nature—Jack Traven’s desperate resourcefulness and Annie Porter's courage—entered the equation, Payne’s plan began to fray. A true pragmatist would have adjusted the threat or abandoned the scheme when the bus jumped the gap, but Payne’s attachment to his intricate design blinded him. He simply could not accept that the variables he had so carefully contained were starting to escape.
+        </p>
+
+        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Fatal Greed: Refusing the Exit</h3>
+        <p>
+            Payne planned every step of his escape, including the final money drop on the subway. He successfully obtained the ransom, giving him everything he initially wanted. At this point, the pragmatic thing to do would have been to walk away and disappear with the millions.
+        </p>
+        <p>
+            But his flaw went deeper than his need for the money; it was his **pride in his control**. He couldn't resist setting one final, unnecessary trap for Jack—a secondary bomb on the rigged subway car. This act of hubris, stemming from his need to prove he was smarter than the heroes, forced him back into the confrontation. He turned a perfect escape into a final, deadly face-off.
+        </p>
+
+        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Miscalculation of the Extra Bomb</h3>
+        <p>
+            Payne’s final, fatal miscalculation was focusing his attention too narrowly on Jack Traven while being physically engaged. He had rigged the subway car, knowing the bus situation was over, but his attention was solely on eliminating Jack.
+        </p>
+        <p>
+            The one element of his plan that was not perfectly accounted for was the **explosive vest** he wore as a contingency. In a moment of high tension and physical struggle with Jack, he accidentally triggered the dead man's switch on his own vest—a mechanism he himself designed for protection, but which ultimately led to his spectacular, unintended demise. His own carefully laid safety net became his downfall, proving that even a master of control cannot control every detail, especially his own emotional reactions to failure.
+        </p>
+
+        <div class="bg-dark-bg/50 p-6 rounded-lg border border-gray-700 mt-8">
+            <p class="text-lg font-semibold text-white mb-2">The Final Irony:</p>
+            <p class="italic">
+                "Howard Payne died not because his bombs were diffused, but because his **greed for control** forced him to stay on the stage long after his brilliant, cynical performance should have ended."
+            </p>
         </div>
       </div>
-    </section>
-
+      <div class="mt-10 text-center">
+        <a href="index.html" class="inline-flex items-center px-6 py-3 bg-accent-red hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition">
+          <i class="fas fa-arrow-left mr-2"></i> Back to All Analyses
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- NEWSLETTER -->
     <section class="py-16 bg-dark-bg border-t border-gray-700">
       <div class="max-w-3xl mx-auto px-4 text-center bg-dark-card p-8 rounded-xl border border-gray-700 shadow-2xl">
@@ -170,55 +195,6 @@
     </div>
   </div>
 </footer>
-  <!-- ======== MOBILE MENU SCRIPT (PROVEN WORKING) ======== -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const linksWrapper = document.querySelector('header nav > .ml-auto');
-    let menu;
-
-    const createMobileMenu = () => {
-      if (menu) return;
-      menu = document.createElement('div');
-      menu.id = 'mobile-menu';
-      menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
-
-      linksWrapper.querySelectorAll('a').forEach(a => {
-        const link = a.cloneNode(true);
-        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
-        link.addEventListener('click', closeMenu);
-        menu.appendChild(link);
-      });
-
-      document.querySelector('header').appendChild(menu);
-    };
-
-    const openMenu = () => {
-      createMobileMenu();
-      menu.style.opacity = '1';
-      menu.style.maxHeight = menu.scrollHeight + 'px';
-      btn.setAttribute('aria-expanded', 'true');
-      btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
-      document.body.classList.add('overflow-hidden');
-    };
-
-    const closeMenu = () => {
-      if (menu) {
-        menu.style.opacity = '0';
-        menu.style.maxHeight = '0';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-        document.body.classList.remove('overflow-hidden');
-      }
-    };
-
-    if (btn && linksWrapper) {
-      btn.addEventListener('click', () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        isOpen ? closeMenu() : openMenu();
-      });
-    }
-  });
-</script>
+<script src="scripts.html"></script>
 </body>
 </html>

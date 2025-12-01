@@ -11,25 +11,7 @@
           integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <style>
-        /* Global Font Import and Theme Colors */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Required Dark Background */
-        }
-        /* Custom colors and styles from requirements */
-        .text-accent-red { color: #f87171; } /* Required Accent Red */
-        .bg-dark-card { background-color: #161b22; } /* Card/Header/Footer Dark BG */
-        .text-hero-red { color: #f87171; } 
-
-        /* Custom scrollbar for webkit */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #161b22; }
-        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4f5864; }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
     <script>
         // Set Tailwind configuration to allow custom classes
         tailwind.config = {
@@ -51,16 +33,16 @@
    <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
     <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
-      <img src="/logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
+      <img src="logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
       <span>SKELEJAR<span class="text-accent-red">.</span></span>
     </a>
 
     <div class="flex items-center ml-auto">
       <div class="flex items-center space-x-6">
-        <a href="#hero" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
+        <a href="index.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
         <a href="about.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
         <a href="flaw_themes.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Flaw Themes</a>
-        <a href="submit_flaws.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
+        <a href="submit_flaw.html" class="hidden md:inline text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
       </div>
 
       <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
@@ -76,28 +58,22 @@
   </nav>
 </header>
     <main class="flex-grow">
-        
         <!-- Villain Analysis Hero -->
-        <section class="relative py-24 md:py-32 bg-dark-bg overflow-hidden">
-            <div class="absolute inset-0 z-0 opacity-30">
-                <img src="/public/thanos-banner.jpg" 
-                     alt="Thanos" class="w-full h-full object-cover object-center" 
-                     onerror="this.src='https://placehold.co/1920x1080/161b22/4b5565?text=THANOS'">
-            </div>
-            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                <i class="fas fa-infinity text-6xl md:text-8xl text-accent-red mb-6 drop-shadow-2xl"></i>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-2xl">
-                    Thanos
-                </h1>
-                <p class="text-2xl md:text-3xl text-gray-300 mb-2 drop-shadow-lg">
-                    Marvel Cinematic Universe
-                </p>
-                <span class="inline-block px-4 py-1 bg-dark-bg/80 rounded-full text-sm font-semibold text-gray-400 border border-gray-700">
-                    Flaw Type: <span class="text-yellow-500">Pragmatism</span>
-                </span>
-            </div>
-        </section>
-
+<!-- THANOS BANNER – FINAL, GUARANTEED FIX -->
+<section class="responsive-banner relative overflow-hidden bg-black flex flex-col items-center justify-start pt-16" 
+         style="background-image: url('thanos-banner.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;">
+  
+  <div class="relative flex flex-col justify-center items-center text-center text-white p-6 bg-black/50 rounded-xl max-w-lg mx-auto">
+    <i class="fas fa-infinity text-6xl text-yellow-500 mb-6" style="text-shadow: 0 0 25px black;"></i>
+    <h1 class="text-6xl lg:text-8xl font-black mb-4 text-white" style="text-shadow: 0 0 20px black;">Thanos</h1>
+    <p class="text-2xl lg:text-3xl mb-6 text-gray-200" style="text-shadow: 0 0 15px black;">
+      Marvel Cinematic Universe
+    </p>
+    <span class="px-8 py-3 bg-black/70 border-2 border-yellow-500 text-yellow-500 rounded-full font-extrabold text-lg">
+      Flaw Type: Pragmatism
+    </span>
+  </div>
+</section>
         <!-- Single Flaw Statement -->
         <section class="py-16 bg-dark-bg border-t border-gray-700">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -114,55 +90,53 @@
 
         <!-- Full Analysis -->
         <section class="py-16 bg-dark-bg">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-dark-card p-8 md:p-10 rounded-xl shadow-2xl">
-                    <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                        <i class="fas fa-scroll text-accent-red mr-3"></i>
-                        Full Analysis
-                    </h2>
-                    <div class="prose prose-invert prose-lg max-w-none space-y-4 text-gray-300">
-                        <p>
-                            Thanos was not a madman. He was a <strong>mathematician of doom</strong> — a being who looked at overpopulation, resource depletion, and suffering, and arrived at a solution so brutal it seemed logical: eliminate half of all life to save the other half.
-                        </p>
-                        <p>
-                            His plan was <em>perfectly balanced</em>, as all things should be. And for a brief, horrifying moment, he succeeded. But perfection in theory is not perfection in practice — and Thanos' greatest strength was also his fatal flaw.
-                        </p>
+           <div class="prose prose-invert prose-lg max-w-none space-y-4 text-gray-300">
+    <p>
+        Thanos was not a madman. He was a <strong>mathematician of doom</strong> — a being who looked at overpopulation, resource depletion, and suffering across the cosmos, and arrived at a solution so brutal it seemed, to him, tragically logical: eliminate half of all life to save the other half.
+    </p>
+    <p>
+        His plan was <em>perfectly balanced</em>, as all things should be. And for a brief, horrifying moment, he succeeded. But perfection in theory is not perfection in practice. Thanos’s greatest strength—his unyielding pragmatism—was also his fatal flaw, leading to two major, irreversible missteps that ultimately caused his defeat.
+    </p>
 
-                        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Savior Complex</h3>
-                        <p>
-                            Thanos didn't see himself as a villain. He saw himself as the <strong>universe's only hope</strong>. This paternalism blinded him to alternative solutions. He dismissed diplomacy, innovation, or redistribution — because <em>only he</em> could be trusted to act decisively.
-                        </p>
+    <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Savior Complex and Dogmatic Pragmatism</h3>
+    <p>
+        Thanos didn't see himself as a villain. He saw himself as the **universe's only hope**, a necessary evil. This paternalistic, messianic view blinded him to alternative, creative solutions. He dismissed diplomacy, technological innovation, or equitable resource redistribution because they were too slow, too messy, or required trusting others.
+    </p>
+    <p>
+        He was convinced his logic was flawless because it was derived from his experience watching his home world, Titan, collapse. This experience transformed his pragmatism into rigid dogma. He believed the universe was a closed system where zero-sum solutions were the only possible ones, leading him to overlook the possibility of **infinite resources** or growth. This inflexibility was a philosophical weakness that the heroes, driven by hope and creativity, were able to exploit.
+    </p>
 
-                        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Single Point of Failure</h3>
-                        <p>
-                            The Infinity Gauntlet was not just a weapon — it was <strong>the entire plan</strong>. Every step, every sacrifice, every alliance was built around acquiring six stones. This created a <em>catastrophic single point of failure</em>. Once the Avengers realized time travel was possible, the entire snap became reversible.
-                        </p>
+    <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Single Point of Failure</h3>
+    <p>
+        The Infinity Gauntlet was not just a weapon — it was **the entire plan**. Every step, every sacrifice, every alliance was built around acquiring six stones. The moment he began collecting them, he created a <em>catastrophic single point of failure</em>. By concentrating all of the universe's power into a single, physical artifact, he gave his enemies a clear, tangible objective.
+    </p>
+    <p>
+        Furthermore, the acquisition of the Soul Stone revealed another layer of his flaw. To gain the stone, he sacrificed the one thing he truly loved: his daughter, Gamora. The stone's price confirmed he had a capacity for love, which he coldly traded for his "greater good." This moment showed that while he could perform the ultimate sacrifice, he was utterly incapable of factoring love, hope, or selfless sacrifice into his equations—the very things that ultimately fueled the Avengers.
+    </p>
 
-                        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Refusal to Adapt</h3>
-                        <p>
-                            When the Avengers came for him five years later, Thanos had already won. He could have hidden, rebuilt, or negotiated. Instead, he <strong>chose to fight for the same plan again</strong> — this time planning to destroy and remake the universe entirely. His pragmatism became dogma.
-                        </p>
+    <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Refusal to Adapt (The *Endgame* Trap)</h3>
+    <p>
+        When the Avengers found him years later, Thanos had already won. He could have lived in peaceful retirement on his garden planet, secure in his success. Instead, when he learned his plan was being undone, his dogmatic pragmatism turned into psychotic rage.
+    </p>
+    <p>
+        The Thanos of *Endgame* made an even grander, more destructive decision: to destroy and remake the universe entirely, believing the existing one was "ungrateful" for his salvation. This shift showed that his belief in the balance was superficial; his real motivation was his ego and his need to be universally recognized as correct. His inability to simply let his win stand and adapt to the passage of time cemented his flaw: a true pragmatist would have moved on; a flawed dogmatist fights the same war until annihilation.
+    </p>
 
-                        <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Final Miscalculation</h3>
-                        <p>
-                            In his last battle, Thanos declared: <em>"I am inevitable."</em> But he forgot one thing: <strong>heroes don't give up</strong>. Tony Stark's snap wasn't part of any equation. It was an emotional, sacrificial act — the very kind of irrationality Thanos dismissed as weakness.
-                        </p>
+    <h3 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Final Miscalculation: Inevitability</h3>
+    <p>
+        In his last battle, Thanos declared: <em>"I am inevitable."</em> He believed his victory was mathematically predetermined. But he forgot one thing: **heroes don't give up**. Tony Stark's final, life-ending snap was not a calculated move from a spreadsheet. It was an emotional, desperate, and sacrificial act fueled by love and conviction—the very kind of irrationality Thanos dismissed as weakness.
+    </p>
+    <p>
+        Thanos's cold, linear logic couldn't account for the non-linear power of attachment and devotion. This blind spot was the specific tool that allowed the Avengers to beat him, not through superior strength, but through a superior *philosophy*.
+    </p>
 
-                        <div class="bg-dark-bg/50 p-6 rounded-lg border border-gray-700 mt-8">
-                            <p class="text-lg font-semibold text-white mb-2">The Final Irony:</p>
-                            <p class="italic">
-                                "The Titan who sought to save the universe through cold logic was undone by the one variable he never accounted for: <strong>human will</strong>."
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-10 text-center">
-                        <a href="index.html" class="inline-flex items-center px-6 py-3 bg-accent-red hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition duration-300">
-                            <i class="fas fa-arrow-left mr-2"></i>
-                            Back to All Analyses
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <div class="bg-dark-bg/50 p-6 rounded-lg border border-gray-700 mt-8">
+        <p class="text-lg font-semibold text-white mb-2">The Final Irony:</p>
+        <p class="italic">
+            "The Titan who sought to save the universe through cold logic was undone by the one variable he never accounted for: **human will**."
+        </p>
+    </div>
+</div>
         </section>
 
         <!-- Newsletter Section -->
@@ -201,56 +175,6 @@
     </div>
   </div>
 </footer>
-
-    <!-- Mobile Menu Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const linksWrapper = document.querySelector('header nav > .ml-auto');
-    let menu;
-
-    const createMobileMenu = () => {
-      if (menu) return;
-      menu = document.createElement('div');
-      menu.id = 'mobile-menu';
-      menu.className = 'md:hidden bg-dark-card border-t border-gray-700 p-6 transition-all duration-300 ease-in-out opacity-0 max-h-0 overflow-hidden';
-
-      linksWrapper.querySelectorAll('a').forEach(a => {
-        const link = a.cloneNode(true);
-        link.className = 'block py-3 text-lg font-medium text-gray-300 hover:text-accent-red transition';
-        link.addEventListener('click', closeMenu);
-        menu.appendChild(link);
-      });
-
-      document.querySelector('header').appendChild(menu);
-    };
-
-    const openMenu = () => {
-      createMobileMenu();
-      menu.style.opacity = '1';
-      menu.style.maxHeight = menu.scrollHeight + 'px';
-      btn.setAttribute('aria-expanded', 'true');
-      btn.innerHTML = '<i class="fas fa-xmark text-xl"></i>';
-      document.body.classList.add('overflow-hidden');
-    };
-
-    const closeMenu = () => {
-      if (menu) {
-        menu.style.opacity = '0';
-        menu.style.maxHeight = '0';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-        document.body.classList.remove('overflow-hidden');
-      }
-    };
-
-    if (btn && linksWrapper) {
-      btn.addEventListener('click', () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        isOpen ? closeMenu() : openMenu();
-      });
-    }
-  });
-</script>
+<script src="scripts.html"></script>
 </body>
 </html>
