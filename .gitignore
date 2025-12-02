@@ -68,3 +68,13 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 DaVinci_Resolve_20.2.2_Windows.zip
+# Exclude all compressed archives (this would prevent the 2GB zip file)
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Exclude common large/temporary folders
+node_modules/
+/backups/
+/dist/
