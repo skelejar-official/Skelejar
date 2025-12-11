@@ -9,13 +9,14 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 // Firebase Configuration
 const firebaseConfig = {
-            apiKey: "AIzaSyCPwl8E7peUlKLaNMMKa8tkJAftYrubiHE",
-            authDomain: "skelejar-newsletter.firebaseapp.com",
-            projectId: "skelejar-newsletter",
-            storageBucket: "skelejar-newsletter.firebasestorage.app",
-            messagingSenderId: "748268050646",
-            appId: "1:748268050646:web:c3e55d88caebf6db485177",
-            measurementId: "G-Z78D15CSQD"
+export const firebaseConfig = {
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_DOMAIN_HERE",
+  projectId: "YOUR_PROJECT_ID_HERE",
+  storageBucket: "YOUR_BUCKET_HERE",
+  messagingSenderId: "YOUR_SENDER_ID_HERE",
+  appId: "YOUR_APP_ID_HERE"
+};
 };
 
 // Initialize Firebase Services
