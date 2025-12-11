@@ -78,3 +78,4 @@ DaVinci_Resolve_20.2.2_Windows.zip
 node_modules/
 /backups/
 /dist/
+firebaseConfig.js
