@@ -46,37 +46,7 @@
     </script>
 </head>
 <body class="text-gray-300 min-h-screen flex flex-col">
-
-    <!-- Header and Navigation -->
-    <header class="sticky top-0 z-50 bg-dark-card/95 backdrop-blur-sm border-b border-gray-700">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-            
-            <a href="index.html" class="flex items-center space-x-2 text-2xl font-black text-white hover:text-accent-red transition duration-300">
-                <img src="logo.png" class="h-7 w-7 md:h-8 md:w-8" alt="Skelejar Logo">
-                <span>SKELEJAR<span class="text-accent-red">.</span></span>
-            </a>
-
-            <div class="flex items-center ml-auto"> 
-                
-                   <div class="flex items-center space-x-6">
-                    <a href="index.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">About</a>
-                    <a href="flaw_themes.html" class="text-accent-red font-medium transition duration-300">Flaw Themes</a>
-                    <a href="submit_flaw.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Submit Flaw</a>
-                </div>
-
-                <span class="hidden md:block mx-4 h-6 w-px bg-gray-700"></span>
-
-                <div class="flex items-center justify-end">
-                    <a href="store.html" class="text-gray-300 hover:text-accent-red font-medium transition duration-300">Store</a>
-                </div>
-
-                <button id="mobile-menu-btn" class="md:hidden ml-4 text-gray-300 hover:text-accent-red focus:outline-none" aria-expanded="false">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+<div data-include="partials/header.html"></div>
     <main class="flex-grow">
         
         <!-- Main Content: Flaw Themes -->
@@ -206,26 +176,17 @@
         </section>
 
     </main>
-    
-    <!-- Footer -->
-    <footer id="footer" class="bg-dark-card border-t border-gray-700 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <a href="index.html" class="text-3xl font-black text-white hover:text-accent-red transition duration-300 mb-4 inline-block">
-      SKELEJAR<span class="text-accent-red">.</span>
-    </a>
-    <div class="flex justify-center space-x-6 mb-8">
-      <!-- Social icons -->
-      <a href="https://tiktok.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-tiktok"></i></a>
-      <a href="https://youtube.com/@skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-youtube"></i></a>
-      <a href="https://x.com/watchskelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fa-brands fa-square-x-twitter"></i></a>
-      <a href="https://instagram.com/skelejarofficial" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/skelejar" class="text-gray-400 hover:text-accent-red text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
-    </div>
-    <div class="border-t border-gray-700 pt-6 text-sm">
-      <p class="text-gray-500">&copy; 2025 Skelejar. All Rights Reserved.</p>
-    </div>
-  </div>
-</footer>
+    <div data-include="partials/footer.html"></div>
 <script type="module" src="./scripts.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-include]").forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const response = await fetch(file);
+        const html = await response.text();
+        el.innerHTML = html;
+    });
+});
+</script>
 </body>
 </html>

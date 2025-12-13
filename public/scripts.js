@@ -71,7 +71,91 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMenu();
     }
   });
+// --- ARTICLE CARD SELECTION ---
+const articleCards = document.querySelectorAll('.article-card');
+function animateCardsStaggered() {
+    articleCards.forEach((card, index) => {
+        card.classList.remove("stagger-in"); // reset animation
+        if (!card.classList.contains("hidden")) {
+            setTimeout(() => {
+                card.classList.add("stagger-in");
+            }, index * 120); // 120ms stagger delay
+        }
+    });
+}
+// --- SEARCH INPUT SELECTION ---
+const searchInput = document.getElementById('search-input');
 
+// --- FILTER BUTTONS ---
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+// ✅ Function to show/hide "No results" message
+function updateNoResultsMessage() {
+    const noResults = document.getElementById("no-results");
+    if (!noResults) return; // safety check
+
+    // Check if any article card is visible
+    const anyVisible = Array.from(articleCards).some(card => !card.classList.contains("hidden"));
+
+    // Also check if the user has typed something in the search bar
+    const query = searchInput ? searchInput.value.trim() : "";
+
+    // ✅ If there is no search text AND at least one card is visible,
+    // hide the "No results" message (this covers page load)
+    if (query === "" && anyVisible) {
+        noResults.classList.remove("show");
+        return;
+    }
+
+    // ✅ If there *is* search text:
+    // show the message only when no cards are visible
+    if (query !== "" && !anyVisible) {
+        noResults.classList.add("show");
+    } else {
+        noResults.classList.remove("show");
+    }
+}
+// ✅ SEARCH BAR FILTERING
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+
+        articleCards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+
+            if (text.includes(query)) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+
+        updateNoResultsMessage();
+    });
+}
+
+// ✅ CATEGORY BUTTON FILTERING
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter.toLowerCase();
+
+        articleCards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+
+            if (filter === "all" || text.includes(filter)) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+
+        // ✅ Update active button styling
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        updateNoResultsMessage();
+    });
+});
   // --- NEWSLETTER CODE ---
   const newsletterForm = document.getElementById('newsletter-form');
   if (newsletterForm) {
